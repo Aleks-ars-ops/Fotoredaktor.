@@ -2,76 +2,41 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <title>Татьяна — Профессиональный фоторедактор</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Базовые стили и переменные */
-        :root {
-            --primary-dark: #1a1a1a;
-            --secondary-dark: #2d2d2d;
-            --accent-color: #e6b87e;
-            --accent-light: #f4d8b1;
-            --text-primary: #ffffff;
-            --text-secondary: #b3b3b3;
-            --card-bg: #2d2d2d;
-            --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            --border-radius: 12px;
-            --container-width: 1400px;
-            --gold-gradient: linear-gradient(135deg, #e6b87e 0%, #d4a15e 100%);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 100px;
-        }
-
         body {
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Open Sans', sans-serif;
+            background: #0a254e;
+            color: #ffffff;
             line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--primary-dark);
-            transition: var(--transition);
-            overflow-x: hidden;
         }
 
         .container {
-            max-width: var(--container-width);
+            max-width: 1300px;
             margin: 0 auto;
             padding: 0 20px;
         }
 
         section {
-            padding: 100px 0;
+            padding: 80px 0;
         }
 
-        /* Типография */
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            line-height: 1.2;
-        }
-
-        h1 {
-            font-size: 4rem;
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
+        h1, h2, h3 {
+            font-family: 'Merriweather', serif;
         }
 
         h2 {
-            font-size: 3rem;
-            margin-bottom: 30px;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
             position: relative;
             display: inline-block;
         }
@@ -79,623 +44,384 @@
         h2::after {
             content: '';
             position: absolute;
-            bottom: -15px;
+            bottom: -12px;
             left: 0;
-            width: 80px;
+            width: 70px;
             height: 3px;
-            background: var(--gold-gradient);
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-radius: 3px;
         }
 
-        h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
         }
 
-        p {
-            margin-bottom: 1.5rem;
-            color: var(--text-secondary);
-            font-size: 1.1rem;
-            line-height: 1.8;
+        .section-header h2::after {
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-        /* Кнопки */
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            padding: 16px 36px;
-            border-radius: 30px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: var(--transition);
-            font-family: 'Montserrat', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn-primary {
-            background: var(--gold-gradient);
-            color: var(--primary-dark);
+            gap: 10px;
+            padding: 12px 28px;
+            border-radius: 40px;
             font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 0.95rem;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(230, 184, 126, 0.3);
+        .btn-gold {
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #0a254e;
         }
 
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--accent-color);
-            border: 2px solid var(--accent-color);
+        .btn-gold:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3);
         }
 
-        .btn-secondary:hover {
-            background-color: rgba(230, 184, 126, 0.1);
-            transform: translateY(-5px);
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #ffd700;
+            color: #ffd700;
         }
 
-        /* Шапка сайта */
+        .btn-outline:hover {
+            background: rgba(255, 215, 0, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Шапка */
         .header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 1000;
-            background-color: rgba(26, 26, 26, 0.95);
+            background: rgba(10, 37, 78, 0.98);
             backdrop-filter: blur(10px);
-            padding: 25px 0;
-            transition: var(--transition);
-            border-bottom: 1px solid rgba(230, 184, 126, 0.1);
+            z-index: 1000;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
         }
 
-        .header.scrolled {
-            padding: 15px 0;
-            background-color: rgba(26, 26, 26, 0.98);
-        }
-
-        .header-inner {
+        .header .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
-        /* Логотип */
         .logo {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
             text-decoration: none;
-            position: relative;
         }
 
         .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gold-gradient);
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.8rem;
-            color: var(--primary-dark);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .logo-icon::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transform: rotate(45deg);
-            transition: var(--transition);
-        }
-
-        .logo:hover .logo-icon::before {
-            left: 100%;
+            font-size: 1.4rem;
+            color: #0a254e;
         }
 
         .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            background: var(--gold-gradient);
+            font-size: 1.6rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            letter-spacing: 2px;
         }
 
-        /* Навигация */
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 50px;
+            gap: 30px;
         }
 
-        .nav-link {
-            color: var(--text-primary);
+        .nav-menu a {
+            color: white;
             text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            transition: var(--transition);
-            position: relative;
-            padding: 8px 0;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: 600;
+            transition: 0.3s;
         }
 
-        .nav-link::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gold-gradient);
-            transition: var(--transition);
+        .nav-menu a:hover {
+            color: #ffd700;
         }
 
-        .nav-link:hover::before,
-        .nav-link.active::before {
-            width: 100%;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--accent-color);
-        }
-
-        /* Действия в шапке */
-        .header-actions {
+        .header-right {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
         }
 
-        .lang-switcher {
-            background: none;
-            border: none;
-            color: var(--text-secondary);
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 8px 16px;
+            border-radius: 40px;
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
+
+        .header-phone i {
+            color: #ffd700;
+        }
+
+        .header-phone span {
+            font-weight: 600;
             font-size: 0.9rem;
-            cursor: pointer;
-            transition: var(--transition);
-            text-transform: uppercase;
-        }
-
-        .lang-switcher:hover {
-            color: var(--accent-color);
         }
 
         .cart-btn {
-            position: relative;
             background: none;
             border: none;
-            color: var(--text-primary);
-            font-size: 1.4rem;
+            color: white;
+            font-size: 1.3rem;
             cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .cart-btn:hover {
-            color: var(--accent-color);
-            transform: scale(1.1);
+            position: relative;
         }
 
         .cart-badge {
             position: absolute;
             top: -10px;
-            right: -10px;
-            background: var(--gold-gradient);
-            color: var(--primary-dark);
-            font-size: 0.8rem;
-            padding: 3px 8px;
-            border-radius: 50%;
-            min-width: 24px;
-            height: 24px;
-            text-align: center;
+            right: -12px;
+            background: #ffd700;
+            color: #0a254e;
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 20px;
             font-weight: 700;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
         }
 
         .menu-toggle {
             display: none;
             background: none;
             border: none;
-            color: var(--text-primary);
-            font-size: 1.8rem;
+            color: white;
+            font-size: 1.5rem;
             cursor: pointer;
         }
 
-        /* Герой-секция */
+        /* Герой */
         .hero {
-            padding-top: 180px;
-            min-height: 100vh;
-            display: flex;
+            padding-top: 140px;
+            background: linear-gradient(135deg, #0a254e, #1a365d);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
             align-items: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(135deg, rgba(26, 26, 26, 0.9) 0%, rgba(45, 45, 45, 0.8) 100%),
-                        url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
         }
 
-        .hero-content {
-            max-width: 800px;
-            position: relative;
-            z-index: 2;
+        .hero h1 {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
         }
 
-        .hero-title {
-            font-size: 4.5rem;
+        .hero h2 {
+            font-size: 1.5rem;
+            color: #ffd700;
             margin-bottom: 20px;
-            animation: fadeInUp 1s ease;
         }
 
-        .hero-subtitle {
-            font-size: 1.8rem;
-            color: var(--accent-color);
-            margin-bottom: 30px;
-            animation: fadeInUp 1s ease 0.2s both;
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin: 40px 0;
         }
 
-        .hero-description {
-            font-size: 1.3rem;
-            margin-bottom: 40px;
-            max-width: 700px;
-            animation: fadeInUp 1s ease 0.4s both;
-        }
-
-        /* Слайдер до/после */
-        .before-after {
-            margin: 60px 0;
-            animation: fadeInUp 1s ease 0.6s both;
-        }
-
-        .slider-container {
-            position: relative;
-            width: 100%;
-            height: 500px;
-            overflow: hidden;
-            border-radius: var(--border-radius);
-            box-shadow: var(--card-shadow);
-        }
-
-        .before-image,
-        .after-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .after-image {
-            clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-        }
-
-        .slider-handle {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 4px;
-            height: 100%;
-            background: var(--gold-gradient);
-            cursor: ew-resize;
-            transform: translateX(-50%);
-        }
-
-        .slider-handle::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 50px;
-            height: 50px;
-            background: var(--gold-gradient);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            content: '\f07e';
-            color: var(--primary-dark);
-            font-size: 1.2rem;
-        }
-
-        .slider-labels {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--accent-color);
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 60px;
-            margin: 60px 0;
-            animation: fadeInUp 1s ease 0.8s both;
-        }
-
-        .stat-item {
+        .stat-card {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 25px 15px;
+            border-radius: 20px;
             text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            transition: 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffd700;
         }
 
         .stat-number {
-            font-size: 3.5rem;
-            font-weight: 700;
-            background: var(--gold-gradient);
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            display: block;
-            line-height: 1;
         }
 
-        .stat-label {
-            font-size: 1rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 10px;
-        }
-
-        .hero-actions {
-            display: flex;
-            gap: 25px;
-            animation: fadeInUp 1s ease 1s both;
-        }
-
-        /* Секция услуг */
+        /* Услуги */
         .services {
-            background-color: var(--secondary-dark);
-            position: relative;
-        }
-
-        .services-header {
-            text-align: center;
-            margin-bottom: 80px;
-        }
-
-        .services-header h2::after {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .services-filters {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            padding: 12px 28px;
-            background: var(--card-bg);
-            border: 2px solid transparent;
-            border-radius: 30px;
-            color: var(--text-primary);
-            cursor: pointer;
-            transition: var(--transition);
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: transparent;
-            border-color: var(--accent-color);
-            color: var(--accent-color);
+            background: #1a365d;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
         }
 
         .service-card {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 40px;
-            transition: var(--transition);
-            border: 1px solid rgba(230, 184, 126, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(230, 184, 126, 0.1), transparent);
-            transition: var(--transition);
-        }
-
-        .service-card:hover::before {
-            left: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            transition: 0.3s;
+            border: 1px solid rgba(255, 215, 0, 0.15);
         }
 
         .service-card:hover {
-            transform: translateY(-15px);
-            box-shadow: var(--card-shadow);
-            border-color: var(--accent-color);
+            transform: translateY(-5px);
+            border-color: #ffd700;
         }
 
-        .service-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 25px;
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            color: var(--accent-color);
-        }
-
-        .service-badge {
-            background: var(--gold-gradient);
-            color: var(--primary-dark);
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .service-card i {
+            font-size: 2.5rem;
+            color: #ffd700;
+            margin-bottom: 15px;
         }
 
         .service-price {
-            font-size: 2.5rem;
+            font-size: 1.6rem;
             font-weight: 700;
-            color: var(--accent-color);
-            margin: 25px 0;
+            color: #ffd700;
+            margin: 15px 0;
         }
 
-        .service-details {
-            margin: 25px 0;
+        .service-features {
+            list-style: none;
+            margin: 20px 0;
         }
 
-        .service-detail {
+        .service-features li {
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-bottom: 12px;
-            color: var(--text-secondary);
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            color: #cbd5e0;
         }
 
-        .service-detail i {
-            color: var(--accent-color);
+        .service-features i {
+            color: #ffd700;
+            width: 20px;
         }
 
-        .service-actions {
-            display: flex;
-            gap: 15px;
-            margin-top: 30px;
-        }
-
-        .service-actions .btn {
-            flex: 1;
-            padding: 14px 25px;
-            font-size: 1rem;
-        }
-
-        /* Калькулятор стоимости */
+        /* Калькулятор */
         .calculator {
-            background-color: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 40px;
-            margin-top: 60px;
-            border: 1px solid rgba(230, 184, 126, 0.2);
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 50px;
+            border: 1px solid rgba(255, 215, 0, 0.2);
         }
 
-        .calculator h3 {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        .calculator-controls {
+        .calculator-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-bottom: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
         }
 
         .calc-group {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 8px;
         }
 
-        .calc-label {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--text-secondary);
+        .calc-group label {
+            color: #cbd5e0;
+            font-size: 0.9rem;
         }
 
-        .calc-value {
-            font-weight: 600;
-            color: var(--accent-color);
-            font-size: 1.2rem;
-        }
-
-        input[type="range"] {
-            width: 100%;
-            height: 6px;
-            background: rgba(230, 184, 126, 0.2);
-            border-radius: 3px;
-            outline: none;
-            -webkit-appearance: none;
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-            -webkit-appearance: none;
-            width: 24px;
-            height: 24px;
-            background: var(--gold-gradient);
-            border-radius: 50%;
-            cursor: pointer;
+        select, input {
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: white;
         }
 
         .calc-total {
             text-align: center;
-            padding: 30px;
-            background: rgba(230, 184, 126, 0.1);
-            border-radius: var(--border-radius);
-            border: 2px solid var(--accent-color);
-        }
-
-        .calc-total h4 {
-            color: var(--text-secondary);
-            margin-bottom: 10px;
+            padding: 25px;
+            background: rgba(255, 215, 0, 0.05);
+            border-radius: 20px;
         }
 
         .total-price {
-            font-size: 3.5rem;
-            font-weight: 700;
-            background: var(--gold-gradient);
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        /* Сайдбар корзины */
+        /* Портфолио */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 215, 0, 0.15);
+        }
+
+        .portfolio-card img {
+            width: 100%;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .before-after {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 15px 0;
+            font-size: 0.8rem;
+        }
+
+        /* Корзина */
         .cart-sidebar {
             position: fixed;
             top: 0;
-            right: -500px;
-            width: 500px;
+            right: -100%;
+            width: 100%;
+            max-width: 450px;
             height: 100vh;
-            background-color: var(--card-bg);
+            background: #1a365d;
             z-index: 1100;
-            transition: var(--transition);
-            padding: 40px;
+            transition: 0.3s;
+            padding: 20px;
             overflow-y: auto;
-            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
-            border-left: 1px solid rgba(230, 184, 126, 0.2);
         }
 
         .cart-sidebar.active {
@@ -706,2333 +432,335 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(230, 184, 126, 0.2);
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+            margin-bottom: 20px;
         }
 
         .close-cart {
             background: none;
             border: none;
-            color: var(--text-primary);
-            font-size: 1.8rem;
+            color: white;
+            font-size: 1.5rem;
             cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .close-cart:hover {
-            color: var(--accent-color);
-            transform: rotate(90deg);
-        }
-
-        .cart-items {
-            margin-bottom: 40px;
         }
 
         .cart-item {
             background: rgba(255, 255, 255, 0.05);
-            border-radius: var(--border-radius);
-            padding: 25px;
-            margin-bottom: 20px;
-            border: 1px solid rgba(230, 184, 126, 0.1);
+            border-radius: 16px;
+            padding: 15px;
+            margin-bottom: 15px;
         }
 
         .cart-item-header {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .cart-item-title {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: var(--accent-color);
-        }
-
-        .cart-item-price {
-            font-size: 1.5rem;
-            font-weight: 700;
-            background: var(--gold-gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .cart-item-controls {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .quantity-selector {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .quantity-btn {
-            width: 36px;
-            height: 36px;
-            border: 2px solid var(--accent-color);
-            background: transparent;
-            color: var(--accent-color);
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            transition: var(--transition);
-        }
-
-        .quantity-btn:hover {
-            background: var(--accent-color);
-            color: var(--primary-dark);
-        }
-
-        .cart-item-quantity {
-            min-width: 40px;
-            text-align: center;
-            font-size: 1.2rem;
-            font-weight: 600;
-        }
-
-        .urgency-selector {
-            display: flex;
-            gap: 10px;
-        }
-
-        .urgency-btn {
-            padding: 8px 20px;
-            border: 2px solid rgba(255, 255, 255, 0.2);
-            background: transparent;
-            color: var(--text-secondary);
-            border-radius: 20px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 0.9rem;
-        }
-
-        .urgency-btn.active {
-            border-color: var(--accent-color);
-            background: rgba(230, 184, 126, 0.1);
-            color: var(--accent-color);
-        }
-
-        .remove-item {
-            background: none;
-            border: none;
-            color: #ff6b6b;
-            cursor: pointer;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            margin-left: auto;
-        }
-
-        .remove-item:hover {
-            transform: scale(1.2);
-        }
-
-        .cart-summary {
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 2px solid var(--accent-color);
+            margin-bottom: 10px;
         }
 
         .cart-total {
             display: flex;
             justify-content: space-between;
-            font-size: 2rem;
+            font-size: 1.3rem;
             font-weight: 700;
-            margin-bottom: 40px;
-            color: var(--accent-color);
-        }
-
-        .cart-form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-
-        .form-group label {
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea,
-        .form-group select {
-            padding: 15px 20px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            color: var(--text-primary);
-            font-family: 'Montserrat', sans-serif;
-            transition: var(--transition);
-            font-size: 1rem;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: var(--accent-color);
-            background-color: rgba(230, 184, 126, 0.05);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .cart-empty {
-            text-align: center;
-            padding: 60px 20px;
-            color: var(--text-secondary);
-        }
-
-        .cart-empty i {
-            font-size: 4rem;
-            margin-bottom: 25px;
-            opacity: 0.3;
-        }
-
-        /* Портфолио */
-        .portfolio {
-            padding: 100px 0;
-        }
-
-        .portfolio-filters {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin: 40px 0 60px;
-            flex-wrap: wrap;
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .portfolio-item {
-            position: relative;
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            height: 400px;
-            cursor: pointer;
-        }
-
-        .portfolio-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-
-        .portfolio-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to top, rgba(26, 26, 26, 0.9), transparent);
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            padding: 30px;
-            opacity: 0;
-            transition: var(--transition);
-        }
-
-        .portfolio-item:hover .portfolio-overlay {
-            opacity: 1;
-        }
-
-        .portfolio-item:hover .portfolio-image {
-            transform: scale(1.05);
-        }
-
-        .portfolio-category {
-            background: var(--gold-gradient);
-            color: var(--primary-dark);
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            align-self: flex-start;
-            margin-bottom: 15px;
+            margin: 20px 0;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 215, 0, 0.2);
         }
 
         /* Футер */
         .footer {
-            background-color: var(--primary-dark);
-            padding: 80px 0 30px;
-            border-top: 1px solid rgba(230, 184, 126, 0.1);
+            background: #0a254e;
+            padding: 50px 0 20px;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
         }
 
-        .footer-content {
+        .footer-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 50px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
         }
 
-        .footer-logo {
-            display: flex;
-            flex-direction: column;
-            gap: 25px;
+        .footer h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #ffd700;
         }
 
-        .footer-description {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background-color: var(--card-bg);
-            border-radius: 50%;
-            color: var(--accent-color);
+        .footer a {
+            color: #cbd5e0;
             text-decoration: none;
-            font-size: 1.3rem;
-            transition: var(--transition);
-            border: 1px solid rgba(230, 184, 126, 0.2);
+            transition: 0.3s;
         }
 
-        .social-link:hover {
-            background: var(--gold-gradient);
-            color: var(--primary-dark);
-            transform: translateY(-5px);
-            border-color: transparent;
-        }
-
-        .footer-links h3 {
-            color: var(--accent-color);
-            margin-bottom: 25px;
-            font-size: 1.3rem;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 15px;
-        }
-
-        .footer-links a {
-            color: var(--text-secondary);
-            text-decoration: none;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent-color);
-            transform: translateX(5px);
-        }
-
-        .contact-info {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        .footer a:hover {
+            color: #ffd700;
         }
 
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 15px;
-            color: var(--text-secondary);
+            gap: 12px;
+            margin-bottom: 12px;
         }
 
-        .contact-item i {
-            color: var(--accent-color);
-            font-size: 1.2rem;
-            width: 24px;
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffd700;
+            transition: 0.3s;
+        }
+
+        .social-link:hover {
+            background: #ffd700;
+            color: #0a254e;
         }
 
         .footer-bottom {
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
             text-align: center;
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.8rem;
         }
 
-        /* Уведомления */
         .notification {
             position: fixed;
-            top: 120px;
+            bottom: 20px;
             right: 20px;
-            padding: 20px 30px;
-            background: var(--gold-gradient);
-            color: var(--primary-dark);
-            border-radius: var(--border-radius);
-            box-shadow: var(--card-shadow);
-            z-index: 2000;
-            transform: translateX(150%);
-            transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            color: #0a254e;
+            padding: 12px 24px;
+            border-radius: 50px;
             font-weight: 600;
-            max-width: 350px;
+            z-index: 1200;
+            transform: translateX(200%);
+            transition: 0.3s;
         }
 
         .notification.show {
             transform: translateX(0);
         }
 
-        /* Анимации */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Мобильное меню */
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 300px;
-            height: 100vh;
-            background-color: var(--card-bg);
-            z-index: 1100;
-            transition: var(--transition);
-            padding: 40px;
-            overflow-y: auto;
-            border-right: 1px solid rgba(230, 184, 126, 0.2);
-        }
-
-        .mobile-menu.active {
-            left: 0;
-        }
-
-        .mobile-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid rgba(230, 184, 126, 0.2);
-        }
-
-        .close-menu {
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 1.8rem;
-            cursor: pointer;
-        }
-
-        .mobile-nav {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .mobile-nav-link {
-            color: var(--text-primary);
-            text-decoration: none;
-            font-size: 1.2rem;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .mobile-nav-link:hover,
-        .mobile-nav-link.active {
-            color: var(--accent-color);
-            padding-left: 10px;
-        }
-
-        /* Адаптивность */
-        @media (max-width: 1200px) {
-            h1 {
-                font-size: 3.5rem;
-            }
-
-            h2 {
-                font-size: 2.5rem;
-            }
-
-            .services-grid {
-                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            }
-
-            .cart-sidebar {
-                width: 450px;
-            }
-        }
-
         @media (max-width: 992px) {
             .nav-menu {
                 display: none;
             }
-
             .menu-toggle {
                 display: block;
             }
-
-            .hero-title {
-                font-size: 3rem;
-            }
-
-            .hero-stats {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 40px;
-            }
-
-            .services-grid {
+            .hero-grid {
                 grid-template-columns: 1fr;
             }
-
-            .portfolio-grid {
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
             }
-
-            .cart-sidebar {
-                width: 100%;
-                right: -100%;
-                padding: 30px;
+            .header-right {
+                gap: 10px;
+            }
+            .header-phone span {
+                display: none;
             }
         }
 
-        @media (max-width: 768px) {
-            .hero {
-                padding-top: 150px;
-                background-attachment: scroll;
+        @media (max-width: 576px) {
+            .stats {
+                grid-template-columns: 1fr;
             }
-
-            .hero-title {
-                font-size: 2.5rem;
-            }
-
-            .hero-subtitle {
-                font-size: 1.4rem;
-            }
-
             .hero-actions {
                 flex-direction: column;
-                align-items: flex-start;
             }
-
-            .slider-container {
-                height: 400px;
-            }
-
-            .calculator-controls {
-                grid-template-columns: 1fr;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-
-            .hero-description {
-                font-size: 1.1rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .service-card {
-                padding: 30px;
-            }
-
-            .service-actions {
-                flex-direction: column;
-            }
-
-            .mobile-menu {
+            .btn {
                 width: 100%;
-                left: -100%;
             }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-
-            .stat-number {
-                font-size: 2.5rem;
-            }
-        }
-
-        /* Модальные окна */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 2000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            opacity: 0;
-            visibility: hidden;
-            transition: var(--transition);
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .modal-content {
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            padding: 40px;
-            max-width: 900px;
-            width: 100%;
-            max-height: 90vh;
-            overflow-y: auto;
-            position: relative;
-            transform: translateY(50px);
-            transition: transform 0.4s ease;
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            color: var(--text-primary);
-            font-size: 2rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        .close-modal:hover {
-            color: var(--accent-color);
-            transform: rotate(90deg);
-        }
-
-        /* Программное обеспечение */
-        .software {
-            padding: 60px 0;
-            background: var(--secondary-dark);
-        }
-
-        .software-grid {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .software-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-            padding: 25px;
-            background: var(--card-bg);
-            border-radius: var(--border-radius);
-            transition: var(--transition);
-            border: 1px solid transparent;
-        }
-
-        .software-item:hover {
-            border-color: var(--accent-color);
-            transform: translateY(-10px);
-        }
-
-        .software-icon {
-            font-size: 3rem;
-            color: var(--accent-color);
-        }
-
-        .software-name {
-            font-weight: 600;
-            color: var(--text-primary);
         }
     </style>
 </head>
 <body>
-    <!-- Уведомление -->
-    <div class="notification" id="notification"></div>
 
-    <!-- Шапка сайта -->
-    <header class="header" id="header">
-        <div class="container">
-            <div class="header-inner">
-                <!-- Логотип -->
-                <a href="#home" class="logo">
-                    <div class="logo-icon">
-                        <i class="fas fa-camera-retro"></i>
-                    </div>
-                    <span class="logo-text">Татьяна</span>
-                </a>
+<div class="notification" id="notification">✅ Добавлено в корзину</div>
 
-                <!-- Навигация -->
-                <nav>
-                    <ul class="nav-menu">
-                        <li><a href="#home" class="nav-link active">Главная</a></li>
-                        <li><a href="#portfolio" class="nav-link">Портфолио</a></li>
-                        <li><a href="#services" class="nav-link">Услуги</a></li>
-                        <li><a href="#about" class="nav-link">Обо мне</a></li>
-                        <li><a href="#contact" class="nav-link">Контакты</a></li>
-                    </ul>
-                </nav>
-
-                <!-- Действия в шапке -->
-                <div class="header-actions">
-                    <button class="lang-switcher" id="langToggle">RU</button>
-                    <button class="cart-btn" id="cartToggle" aria-label="Открыть корзину">
-                        <i class="fas fa-shopping-bag"></i>
-                        <span class="cart-badge" id="cartCount">0</span>
-                    </button>
-                    <button class="menu-toggle" id="menuToggle" aria-label="Открыть меню">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
+<header class="header">
+    <div class="container">
+        <a href="#" class="logo">
+            <div class="logo-icon"><i class="fas fa-camera"></i></div>
+            <span class="logo-text">Татьяна</span>
+        </a>
+        <ul class="nav-menu">
+            <li><a href="#home">Главная</a></li>
+            <li><a href="#services">Услуги</a></li>
+            <li><a href="#portfolio">Портфолио</a></li>
+            <li><a href="#contact">Контакты</a></li>
+        </ul>
+        <div class="header-right">
+            <div class="header-phone">
+                <i class="fas fa-phone-alt"></i>
+                <span>+7 (999) 123-45-67</span>
             </div>
-        </div>
-    </header>
-
-    <!-- Мобильное меню -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu-header">
-            <div class="logo">
-                <div class="logo-icon">
-                    <i class="fas fa-camera-retro"></i>
-                </div>
-                <span class="logo-text">Татьяна</span>
-            </div>
-            <button class="close-menu" id="closeMenu">
-                <i class="fas fa-times"></i>
+            <button class="cart-btn" id="cartToggle">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge" id="cartCount">0</span>
             </button>
-        </div>
-        <nav class="mobile-nav">
-            <a href="#home" class="mobile-nav-link active">Главная</a>
-            <a href="#portfolio" class="mobile-nav-link">Портфолио</a>
-            <a href="#services" class="mobile-nav-link">Услуги</a>
-            <a href="#about" class="mobile-nav-link">Обо мне</a>
-            <a href="#contact" class="mobile-nav-link">Контакты</a>
-            <a href="#" class="mobile-nav-link" id="mobileCartBtn">Корзина</a>
-        </nav>
-    </div>
-
-    <!-- Герой-секция -->
-    <section class="hero" id="home">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Татьяна</h1>
-                <h2 class="hero-subtitle">Профессиональный фоторедактор</h2>
-                <p class="hero-description">
-                    Специализируюсь на профессиональной ретуши фотографий, колористике и композитинге. 
-                    Работаю с фотографами, модельными агентствами и брендами по всему миру. 
-                    Превращаю обычные снимки в произведения искусства.
-                </p>
-
-                <!-- Слайдер до/после -->
-                <div class="before-after">
-                    <div class="slider-container" id="sliderContainer">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80" 
-                             alt="До обработки" class="before-image" id="beforeImage">
-                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80&brightness=1.2&contrast=1.1&saturation=1.2" 
-                             alt="После обработки" class="after-image" id="afterImage">
-                        <div class="slider-handle" id="sliderHandle"></div>
-                    </div>
-                    <div class="slider-labels">
-                        <span>До обработки</span>
-                        <span>После обработки</span>
-                    </div>
-                </div>
-
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="8">0</span>
-                        <span class="stat-label">лет опыта</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="2500">0</span>
-                        <span class="stat-label">обработанных фото</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number" data-target="98">0</span>
-                        <span class="stat-label">довольных клиентов</span>
-                    </div>
-                </div>
-
-                <div class="hero-actions">
-                    <a href="#portfolio" class="btn btn-primary">
-                        <i class="fas fa-images"></i> Смотреть портфолио
-                    </a>
-                    <a href="#services" class="btn btn-secondary">
-                        <i class="fas fa-comments"></i> Бесплатная консультация
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Портфолио -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <div class="services-header">
-                <h2>Портфолио</h2>
-                <p>Примеры моих работ в различных категориях обработки фотографий</p>
-
-                <div class="portfolio-filters">
-                    <button class="filter-btn active" data-filter="all">Все работы</button>
-                    <button class="filter-btn" data-filter="retouch">Ретушь портретов</button>
-                    <button class="filter-btn" data-filter="product">Предметная съёмка</button>
-                    <button class="filter-btn" data-filter="restoration">Реставрация</button>
-                    <button class="filter-btn" data-filter="color">Колористика</button>
-                </div>
-            </div>
-
-            <div class="portfolio-grid" id="portfolioGrid">
-                <!-- Работы будут загружены через JS -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Секция услуг -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="services-header">
-                <h2>Услуги и цены</h2>
-                <p>Профессиональная обработка фотографий с гарантией качества</p>
-
-                <div class="services-filters">
-                    <button class="filter-btn active" data-filter="all">Все услуги</button>
-                    <button class="filter-btn" data-filter="basic">Базовые</button>
-                    <button class="filter-btn" data-filter="professional">Профессиональные</button>
-                    <button class="filter-btn" data-filter="premium">Премиум</button>
-                </div>
-            </div>
-
-            <div class="services-grid" id="servicesGrid">
-                <!-- Услуги будут загружены через JS -->
-            </div>
-
-            <!-- Калькулятор стоимости -->
-            <div class="calculator">
-                <h3>Калькулятор стоимости</h3>
-                <div class="calculator-controls">
-                    <div class="calc-group">
-                        <label class="calc-label">
-                            Количество фото
-                            <span class="calc-value" id="photoCountValue">1</span>
-                        </label>
-                        <input type="range" id="photoCount" min="1" max="100" value="1">
-                    </div>
-                    <div class="calc-group">
-                        <label class="calc-label">
-                            Сложность обработки
-                            <span class="calc-value" id="complexityValue">Базовая</span>
-                        </label>
-                        <input type="range" id="complexity" min="1" max="3" value="1">
-                    </div>
-                    <div class="calc-group">
-                        <label class="calc-label">
-                            Срочность
-                            <span class="calc-value" id="urgencyValue">Стандартная</span>
-                        </label>
-                        <input type="range" id="urgency" min="1" max="3" value="1">
-                    </div>
-                </div>
-                <div class="calc-total">
-                    <h4>Примерная стоимость</h4>
-                    <div class="total-price" id="totalPrice">1 500 ₽</div>
-                    <p>Точная стоимость рассчитывается после оценки фото</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Программное обеспечение -->
-    <section class="software">
-        <div class="container">
-            <h2 style="text-align: center; margin-bottom: 20px;">Программное обеспечение</h2>
-            <p style="text-align: center; max-width: 800px; margin: 0 auto 40px;">Работаю в профессиональных программах для достижения наилучшего результата</p>
-
-            <div class="software-grid">
-                <div class="software-item">
-                    <i class="fab fa-adobe software-icon"></i>
-                    <span class="software-name">Adobe Photoshop</span>
-                </div>
-                <div class="software-item">
-                    <i class="fas fa-sun software-icon"></i>
-                    <span class="software-name">Adobe Lightroom</span>
-                </div>
-                <div class="software-item">
-                    <i class="fas fa-magic software-icon"></i>
-                    <span class="software-name">Capture One</span>
-                </div>
-                <div class="software-item">
-                    <i class="fas fa-palette software-icon"></i>
-                    <span class="software-name">DaVinci Resolve</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Футер -->
-    <footer class="footer" id="contact">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <div class="logo">
-                        <div class="logo-icon">
-                            <i class="fas fa-camera-retro"></i>
-                        </div>
-                        <span class="logo-text">Татьяна</span>
-                    </div>
-                    <p class="footer-description">
-                        Профессиональный фоторедактор с 8-летним опытом работы. 
-                        Специализируюсь на ретуши портретов, колористике и реставрации фотографий.
-                    </p>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Behance">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Telegram">
-                            <i class="fab fa-telegram"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="WhatsApp">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-links">
-                    <h3>Навигация</h3>
-                    <ul>
-                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Главная</a></li>
-                        <li><a href="#portfolio"><i class="fas fa-chevron-right"></i> Портфолио</a></li>
-                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Услуги</a></li>
-                        <li><a href="#about"><i class="fas fa-chevron-right"></i> Обо мне</a></li>
-                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Контакты</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links">
-                    <h3>Услуги</h3>
-                    <ul>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Ретушь портретов</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Предметная ретушь</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Реставрация фото</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Колористика</a></li>
-                        <li><a href="#"><i class="fas fa-chevron-right"></i> Композитинг</a></li>
-                    </ul>
-                </div>
-
-                <div class="contact-info">
-                    <h3>Контакты</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>hello@tatiana-photo.ru</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>+7 (999) 123-45-67</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Москва, Россия</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <span>Пн-Пт: 10:00-20:00</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2024 Татьяна — Профессиональный фоторедактор. Все права защищены.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Сайдбар корзины -->
-    <div class="cart-sidebar" id="cartSidebar">
-        <div class="cart-header">
-            <h3>Корзина услуг</h3>
-            <button class="close-cart" id="closeCart">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-
-        <div class="cart-items" id="cartItems">
-            <!-- Услуги будут загружены динамически -->
-        </div>
-
-        <div class="cart-empty" id="cartEmpty">
-            <i class="fas fa-shopping-bag"></i>
-            <p>Корзина пуста</p>
-            <p>Добавьте услуги из раздела "Услуги"</p>
-        </div>
-
-        <div class="cart-summary" id="cartSummary">
-            <div class="cart-total">
-                <span>Итого:</span>
-                <span id="cartTotal">0 ₽</span>
-            </div>
-
-            <form class="cart-form" id="cartForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="clientName">Ваше имя *</label>
-                        <input type="text" id="clientName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="clientEmail">Email *</label>
-                        <input type="email" id="clientEmail" required>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="clientPhone">Телефон *</label>
-                    <input type="tel" id="clientPhone" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="deliveryMethod">Способ передачи фото</label>
-                    <select id="deliveryMethod">
-                        <option value="google">Google Диск</option>
-                        <option value="dropbox">Dropbox</option>
-                        <option value="email">Email</option>
-                        <option value="telegram">Telegram</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="deadline">Желаемый срок выполнения</label>
-                    <input type="date" id="deadline">
-                </div>
-
-                <div class="form-group">
-                    <label for="clientMessage">Комментарий к заказу</label>
-                    <textarea id="clientMessage" rows="4" placeholder="Опишите ваши пожелания, особенности обработки..."></textarea>
-                </div>
-
-                <button type="submit" class="btn btn-primary" style="width: 100%;">
-                    <i class="fas fa-paper-plane"></i> Отправить заявку
-                </button>
-            </form>
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
         </div>
     </div>
-
-    <!-- JavaScript -->
-    <script>
-        // Данные услуг
-        const services = [
-            {
-                id: 1,
-                name: "Базовая ретушь",
-                category: "basic",
-                level: "basic",
-                description: "Удаление временных дефектов кожи, коррекция цвета и контраста, кадрирование",
-                price: 1500,
-                pricePerPhoto: 1500,
-                duration: "1-2 дня",
-                icon: "fas fa-magic",
-                features: [
-                    "Удаление прыщей и временных дефектов",
-                    "Коррекция цвета и контраста",
-                    "Баланс белого",
-                    "Кадрирование и выравнивание"
-                ],
-                example: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-            },
-            {
-                id: 2,
-                name: "Портретная ретушь",
-                category: "professional",
-                level: "professional",
-                description: "Глубокая ретушь кожи, пластика, работа со светом и тенью, художественная обработка",
-                price: 3500,
-                pricePerPhoto: 3500,
-                duration: "2-3 дня",
-                icon: "fas fa-user-tie",
-                features: [
-                    "Глубокая ретушь кожи (Dodge & Burn)",
-                    "Пластика и коррекция фигуры",
-                    "Художественная обработка",
-                    "Работа со светом и тенью",
-                    "Улучшение текстуры кожи"
-                ],
-                example: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-            },
-            {
-                id: 3,
-                name: "Предметная ретушь",
-                category: "professional",
-                level: "professional",
-                description: "Обработка товаров для каталогов: удаление дефектов, замена фона, коррекция цвета",
-                price: 2500,
-                pricePerPhoto: 2500,
-                duration: "1-2 дня",
-                icon: "fas fa-gem",
-                features: [
-                    "Удаление пыли и царапин",
-                    "Замена фона",
-                    "Точная цветокоррекция",
-                    "Создание теней и отражений",
-                    "Подготовка для печати"
-                ],
-                example: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-            },
-            {
-                id: 4,
-                name: "Реставрация старых фото",
-                category: "premium",
-                level: "premium",
-                description: "Восстановление повреждённых фотографий: удаление царапин, трещин, восстановление цвета",
-                price: 5000,
-                pricePerPhoto: 5000,
-                duration: "3-5 дней",
-                icon: "fas fa-history",
-                features: [
-                    "Удаление царапин и трещин",
-                    "Восстановление утраченных фрагментов",
-                    "Реставрация цвета",
-                    "Устранение заломов и пятен",
-                    "Повышение резкости"
-                ],
-                example: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-            },
-            {
-                id: 5,
-                name: "Колористика и тонирование",
-                category: "professional",
-                level: "professional",
-                description: "Художественная цветокоррекция, создание цветовых схем, кинематографичные тона",
-                price: 3000,
-                pricePerPhoto: 3000,
-                duration: "2-3 дня",
-                icon: "fas fa-palette",
-                features: [
-                    "Создание цветовых схем",
-                    "Кинематографичные тона",
-                    "Сезонная цветокоррекция",
-                    "Стилизация под плёнку",
-                    "Создание атмосферы"
-                ],
-                example: "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-            },
-            {
-                id: 6,
-                name: "Композитинг и монтаж",
-                category: "premium",
-                level: "premium",
-                description: "Создание композитов, замена фона, добавление элементов, художественный монтаж",
-                price: 8000,
-                pricePerPhoto: 8000,
-                duration: "3-7 дней",
-                icon: "fas fa-layer-group",
-                features: [
-                    "Замена и создание фона",
-                    "Добавление/удаление объектов",
-                    "Создание композитов",
-                    "Реалистичное совмещение",
-                    "Художественный монтаж"
-                ],
-                example: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-            },
-            {
-                id: 7,
-                name: "Пакетная обработка",
-                category: "basic",
-                level: "basic",
-                description: "Обработка от 50 фотографий со скидкой. Идеально для мероприятий, каталогов",
-                price: 50000,
-                pricePerPhoto: 1000,
-                duration: "7-14 дней",
-                icon: "fas fa-images",
-                features: [
-                    "Обработка от 50 фото",
-                    "Скидка 30% от базовой цены",
-                    "Единый стиль для всех фото",
-                    "Быстрая пакетная обработка",
-                    "Идеально для мероприятий"
-                ],
-                example: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-            },
-            {
-                id: 8,
-                name: "Срочная обработка",
-                category: "premium",
-                level: "premium",
-                description: "Экспресс-обработка в течение 24 часов. Доплата 100% к стоимости услуги",
-                price: 0, // Будет рассчитана как цена услуги × 2
-                priceMultiplier: 2,
-                duration: "24 часа",
-                icon: "fas fa-bolt",
-                features: [
-                    "Обработка в течение 24 часов",
-                    "Приоритет в очереди",
-                    "Быстрая связь",
-                    "Экспресс-коррекции",
-                    "Идеально для срочных проектов"
-                ],
-                example: "https://images.unsplash.com/photo-1512850183-6d8b49e3298e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-            }
-        ];
-
-        // Данные портфолио
-        const portfolioItems = [
-            { id: 1, category: "retouch", image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Портретная ретушь", client: "Модельное агентство" },
-            { id: 2, category: "product", image: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Предметная съёмка", client: "Интернет-магазин" },
-            { id: 3, category: "restoration", image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Реставрация фото", client: "Частный клиент" },
-            { id: 4, category: "color", image: "https://images.unsplash.com/photo-1516726817505-f5ed825624d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Колористика", client: "Фотограф" },
-            { id: 5, category: "retouch", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Мужской портрет", client: "Бизнес-портрет" },
-            { id: 6, category: "product", image: "https://images.unsplash.com/photo-1491553895911-0055eca6402d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Ювелирные изделия", client: "Ювелирный бренд" },
-            { id: 7, category: "color", image: "https://images.unsplash.com/photo-1512850183-6d8b49e3298e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Пейзажная фотография", client: "Путешественник" },
-            { id: 8, category: "retouch", image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Свадебная фотография", client: "Свадебный фотограф" },
-            { id: 9, category: "restoration", image: "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80", title: "Винтажная реставрация", client: "Семейный архив" }
-        ];
-
-        // Главный объект приложения
-        const PhotoEditorApp = {
-            cart: [],
-            currentServiceFilter: 'all',
-            currentPortfolioFilter: 'all',
-            sliderActive: false,
-
-            // Инициализация
-            init() {
-                this.loadCartFromStorage();
-                this.renderServices();
-                this.renderPortfolio();
-                this.setupEventListeners();
-                this.updateCartCount();
-                this.animateStats();
-                this.setupBeforeAfterSlider();
-                this.setupCalculator();
-                this.setupScrollEffects();
-            },
-
-            // Загрузка корзины из localStorage
-            loadCartFromStorage() {
-                const savedCart = localStorage.getItem('photoeditor_cart');
-                if (savedCart) {
-                    this.cart = JSON.parse(savedCart);
-                }
-            },
-
-            // Сохранение корзины в localStorage
-            saveCartToStorage() {
-                localStorage.setItem('photoeditor_cart', JSON.stringify(this.cart));
-            },
-
-            // Рендеринг услуг
-            renderServices() {
-                const servicesGrid = document.getElementById('servicesGrid');
-                servicesGrid.innerHTML = '';
-
-                const filteredServices = this.currentServiceFilter === 'all' 
-                    ? services 
-                    : services.filter(service => service.level === this.currentServiceFilter);
-
-                filteredServices.forEach(service => {
-                    const serviceCard = this.createServiceCard(service);
-                    servicesGrid.appendChild(serviceCard);
-                });
-            },
-
-            // Создание карточки услуги
-            createServiceCard(service) {
-                const card = document.createElement('div');
-                card.className = 'service-card';
-                card.dataset.category = service.category;
-
-                const priceDisplay = service.id === 8 
-                    ? `×2 от выбранной услуги` 
-                    : `${service.price.toLocaleString()} ₽`;
-
-                card.innerHTML = `
-                    <div class="service-header">
-                        <div class="service-icon">
-                            <i class="${service.icon}"></i>
-                        </div>
-                        <span class="service-badge">${service.category === 'basic' ? 'Базовый' : service.category === 'professional' ? 'Проф' : 'Премиум'}</span>
-                    </div>
-                    <h3>${service.name}</h3>
-                    <p>${service.description}</p>
-
-                    <div class="service-details">
-                        ${service.features.map(feature => `
-                            <div class="service-detail">
-                                <i class="fas fa-check"></i>
-                                <span>${feature}</span>
-                            </div>
-                        `).join('')}
-                    </div>
-
-                    <div class="service-price">${priceDisplay}</div>
-                    <div class="service-detail">
-                        <i class="far fa-clock"></i>
-                        <span>Срок выполнения: ${service.duration}</span>
-                    </div>
-
-                    <div class="service-actions">
-                        <button class="btn btn-secondary view-service" data-id="${service.id}">
-                            <i class="fas fa-eye"></i> Пример
-                        </button>
-                        <button class="btn btn-primary add-service" data-id="${service.id}">
-                            <i class="fas fa-cart-plus"></i> В корзину
-                        </button>
-                    </div>
-                `;
-
-                // Обработчики событий
-                card.querySelector('.add-service').addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    this.addToCart(service.id);
-                });
-
-                card.querySelector('.view-service').addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    this.showServiceExample(service);
-                });
-
-                return card;
-            },
-
-            // Рендеринг портфолио
-            renderPortfolio() {
-                const portfolioGrid = document.getElementById('portfolioGrid');
-                portfolioGrid.innerHTML = '';
-
-                const filteredItems = this.currentPortfolioFilter === 'all' 
-                    ? portfolioItems 
-                    : portfolioItems.filter(item => item.category === this.currentPortfolioFilter);
-
-                filteredItems.forEach(item => {
-                    const portfolioItem = this.createPortfolioItem(item);
-                    portfolioGrid.appendChild(portfolioItem);
-                });
-            },
-
-            // Создание элемента портфолио
-            createPortfolioItem(item) {
-                const itemElement = document.createElement('div');
-                itemElement.className = 'portfolio-item';
-                itemElement.dataset.category = item.category;
-
-                const categoryLabels = {
-                    'retouch': 'Ретушь',
-                    'product': 'Предметная',
-                    'restoration': 'Реставрация',
-                    'color': 'Колористика'
-                };
-
-                itemElement.innerHTML = `
-                    <img src="${item.image}" alt="${item.title}" class="portfolio-image" loading="lazy">
-                    <div class="portfolio-overlay">
-                        <span class="portfolio-category">${categoryLabels[item.category]}</span>
-                        <h3>${item.title}</h3>
-                        <p>${item.client}</p>
-                    </div>
-                `;
-
-                itemElement.addEventListener('click', () => {
-                    this.showPortfolioModal(item);
-                });
-
-                return itemElement;
-            },
-
-            // Показать пример услуги
-            showServiceExample(service) {
-                const modalHTML = `
-                    <div class="modal-overlay active" id="serviceModal">
-                        <div class="modal-content">
-                            <button class="close-modal">&times;</button>
-                            <div class="service-example-content">
-                                <div class="service-example-header">
-                                    <h2>${service.name}</h2>
-                                    <span class="service-badge">${service.category === 'basic' ? 'Базовый' : service.category === 'professional' ? 'Проф' : 'Премиум'}</span>
-                                </div>
-
-                                <div class="before-after-small">
-                                    <div class="slider-container-small">
-                                        <img src="${service.example}" alt="До" class="before-image-small">
-                                        <img src="${service.example}?brightness=1.2&contrast=1.1&saturation=1.2" alt="После" class="after-image-small">
-                                        <div class="slider-handle-small"></div>
-                                    </div>
-                                    <div class="slider-labels-small">
-                                        <span>До обработки</span>
-                                        <span>После обработки</span>
-                                    </div>
-                                </div>
-
-                                <div class="service-features-list">
-                                    <h3>Что входит в услугу:</h3>
-                                    <ul>
-                                        ${service.features.map(feature => `<li><i class="fas fa-check"></i> ${feature}</li>`).join('')}
-                                    </ul>
-                                </div>
-
-                                <div class="service-price-info">
-                                    <div class="price-display">
-                                        <span class="price-label">Стоимость:</span>
-                                        <span class="price-value">${service.id === 8 ? '×2 от выбранной услуги' : `${service.price.toLocaleString()} ₽`}</span>
-                                    </div>
-                                    <div class="duration-display">
-                                        <span class="duration-label">Срок выполнения:</span>
-                                        <span class="duration-value">${service.duration}</span>
-                                    </div>
-                                </div>
-
-                                <button class="btn btn-primary add-from-modal" data-id="${service.id}" style="width: 100%; margin-top: 30px;">
-                                    <i class="fas fa-cart-plus"></i> Добавить в корзину
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                `;
-
-                document.body.insertAdjacentHTML('beforeend', modalHTML);
-
-                // Добавляем стили для модального окна
-                const style = document.createElement('style');
-                style.textContent = `
-                    .service-example-header {
-                        display: flex;
-                        justify-content: space-between;
-                        align-items: center;
-                        margin-bottom: 30px;
-                    }
-                    .before-after-small {
-                        margin: 30px 0;
-                    }
-                    .slider-container-small {
-                        position: relative;
-                        width: 100%;
-                        height: 300px;
-                        overflow: hidden;
-                        border-radius: var(--border-radius);
-                    }
-                    .before-image-small,
-                    .after-image-small {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                    }
-                    .after-image-small {
-                        clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
-                    }
-                    .slider-handle-small {
-                        position: absolute;
-                        top: 0;
-                        left: 50%;
-                        width: 4px;
-                        height: 100%;
-                        background: var(--gold-gradient);
-                        cursor: ew-resize;
-                        transform: translateX(-50%);
-                    }
-                    .slider-handle-small::before {
-                        content: '';
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        width: 40px;
-                        height: 40px;
-                        background: var(--gold-gradient);
-                        border-radius: 50%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: center;
-                        font-family: 'Font Awesome 6 Free';
-                        font-weight: 900;
-                        content: '\\f07e';
-                        color: var(--primary-dark);
-                        font-size: 1rem;
-                    }
-                    .slider-labels-small {
-                        display: flex;
-                        justify-content: space-between;
-                        margin-top: 15px;
-                        font-size: 1rem;
-                        font-weight: 600;
-                        color: var(--accent-color);
-                    }
-                    .service-features-list ul {
-                        list-style: none;
-                        padding: 0;
-                        margin: 20px 0;
-                    }
-                    .service-features-list li {
-                        padding: 10px 0;
-                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                        display: flex;
-                        align-items: center;
-                        gap: 15px;
-                    }
-                    .service-features-list li i {
-                        color: var(--accent-color);
-                    }
-                    .service-price-info {
-                        display: flex;
-                        justify-content: space-between;
-                        margin-top: 30px;
-                        padding: 20px;
-                        background: rgba(255, 255, 255, 0.05);
-                        border-radius: var(--border-radius);
-                    }
-                    .price-display,
-                    .duration-display {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 5px;
-                    }
-                    .price-label,
-                    .duration-label {
-                        font-size: 0.9rem;
-                        color: var(--text-secondary);
-                    }
-                    .price-value {
-                        font-size: 2rem;
-                        font-weight: 700;
-                        background: var(--gold-gradient);
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
-                    }
-                    .duration-value {
-                        font-size: 1.5rem;
-                        font-weight: 600;
-                        color: var(--accent-color);
-                    }
-                `;
-                document.head.appendChild(style);
-
-                // Настройка слайдера в модальном окне
-                const modalSlider = document.querySelector('.slider-container-small');
-                const modalHandle = document.querySelector('.slider-handle-small');
-                const modalAfterImage = document.querySelector('.after-image-small');
-
-                this.setupSlider(modalSlider, modalHandle, modalAfterImage);
-
-                // Обработчики событий для модального окна
-                document.querySelector('.close-modal').addEventListener('click', () => {
-                    document.getElementById('serviceModal').remove();
-                });
-
-                document.querySelector('.add-from-modal').addEventListener('click', () => {
-                    this.addToCart(service.id);
-                    document.getElementById('serviceModal').remove();
-                    this.showNotification(`"${service.name}" добавлено в корзину`);
-                });
-
-                document.getElementById('serviceModal').addEventListener('click', (e) => {
-                    if (e.target === document.getElementById('serviceModal')) {
-                        document.getElementById('serviceModal').remove();
-                    }
-                });
-            },
-
-            // Показать модальное окно портфолио
-            showPortfolioModal(item) {
-                const categoryLabels = {
-                    'retouch': 'Ретушь портретов',
-                    'product': 'Предметная съёмка',
-                    'restoration': 'Реставрация фотографий',
-                    'color': 'Колористика и тонирование'
-                };
-
-                const modalHTML = `
-                    <div class="modal-overlay active" id="portfolioModal">
-                        <div class="modal-content">
-                            <button class="close-modal">&times;</button>
-                            <div class="portfolio-modal-content">
-                                <img src="${item.image}" alt="${item.title}" class="portfolio-modal-image">
-                                <div class="portfolio-modal-info">
-                                    <h2>${item.title}</h2>
-                                    <div class="portfolio-category">${categoryLabels[item.category]}</div>
-                                    <p><strong>Клиент:</strong> ${item.client}</p>
-                                    <div class="portfolio-description">
-                                        <h3>Описание работы:</h3>
-                                        <p>Профессиональная обработка фотографии с использованием современных техник ретуши и цветокоррекции. Работа выполнена с вниманием к деталям и сохранением естественности изображения.</p>
-                                    </div>
-                                    <div class="portfolio-techniques">
-                                        <h3>Использованные техники:</h3>
-                                        <ul>
-                                            <li>Ретушь кожи (Dodge & Burn)</li>
-                                            <li>Цветокоррекция и тонирование</li>
-                                            <li>Работа со светом и тенью</li>
-                                            <li>Повышение резкости</li>
-                                        </ul>
-                                    </div>
-                                    <div class="portfolio-actions">
-                                        <button class="btn btn-secondary" onclick="window.open('${item.image}', '_blank')">
-                                            <i class="fas fa-expand"></i> Открыть в полном размере
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                `;
-
-                document.body.insertAdjacentHTML('beforeend', modalHTML);
-
-                // Добавляем стили
-                const style = document.createElement('style');
-                style.textContent = `
-                    .portfolio-modal-content {
-                        display: grid;
-                        grid-template-columns: 1fr 1fr;
-                        gap: 40px;
-                        align-items: start;
-                    }
-                    .portfolio-modal-image {
-                        width: 100%;
-                        border-radius: var(--border-radius);
-                        box-shadow: var(--card-shadow);
-                    }
-                    .portfolio-modal-info {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 20px;
-                    }
-                    .portfolio-description,
-                    .portfolio-techniques {
-                        margin-top: 20px;
-                    }
-                    .portfolio-techniques ul {
-                        list-style: none;
-                        padding: 0;
-                        margin: 15px 0;
-                    }
-                    .portfolio-techniques li {
-                        padding: 8px 0;
-                        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                        display: flex;
-                        align-items: center;
-                        gap: 10px;
-                    }
-                    .portfolio-techniques li:before {
-                        content: '✓';
-                        color: var(--accent-color);
-                        font-weight: bold;
-                    }
-                    .portfolio-actions {
-                        margin-top: 30px;
-                    }
-                    @media (max-width: 768px) {
-                        .portfolio-modal-content {
-                            grid-template-columns: 1fr;
-                        }
-                    }
-                `;
-                document.head.appendChild(style);
-
-                // Обработчики событий
-                document.querySelector('#portfolioModal .close-modal').addEventListener('click', () => {
-                    document.getElementById('portfolioModal').remove();
-                });
-
-                document.getElementById('portfolioModal').addEventListener('click', (e) => {
-                    if (e.target === document.getElementById('portfolioModal')) {
-                        document.getElementById('portfolioModal').remove();
-                    }
-                });
-            },
-
-            // Добавление в корзину
-            addToCart(serviceId) {
-                const service = services.find(s => s.id === serviceId);
-                if (!service) return;
-
-                // Для срочной обработки нужно выбрать основную услугу
-                if (serviceId === 8) {
-                    this.showUrgencyModal();
-                    return;
-                }
-
-                const existingItem = this.cart.find(item => item.id === serviceId);
-
-                if (existingItem) {
-                    existingItem.quantity += 1;
-                } else {
-                    this.cart.push({
-                        id: service.id,
-                        name: service.name,
-                        price: service.price,
-                        pricePerPhoto: service.pricePerPhoto,
-                        quantity: 1,
-                        urgency: 'standard' // standard, urgent, super_urgent
-                    });
-                }
-
-                this.saveCartToStorage();
-                this.updateCartCount();
-                this.showNotification(`"${service.name}" добавлено в корзину`);
-
-                if (this.isCartOpen()) {
-                    this.renderCart();
-                }
-            },
-
-            // Модальное окно для срочной обработки
-            showUrgencyModal() {
-                const modalHTML = `
-                    <div class="modal-overlay active" id="urgencyModal">
-                        <div class="modal-content" style="max-width: 500px;">
-                            <button class="close-modal">&times;</button>
-                            <h2 style="margin-bottom: 20px;">Выберите основную услугу для срочной обработки</h2>
-                            <div class="urgency-services-list">
-                                ${services.filter(s => s.id !== 8).map(service => `
-                                    <div class="urgency-service-item">
-                                        <h4>${service.name}</h4>
-                                        <p>${service.description}</p>
-                                        <div class="urgency-service-price">${service.price.toLocaleString()} ₽</div>
-                                        <button class="btn btn-primary add-urgency-service" data-id="${service.id}" data-urgent="true">
-                                            Выбрать (${(service.price * 2).toLocaleString()} ₽ с учётом срочности)
-                                        </button>
-                                    </div>
-                                `).join('')}
-                            </div>
-                        </div>
-                    </div>
-                `;
-
-                document.body.insertAdjacentHTML('beforeend', modalHTML);
-
-                // Стили для модального окна
-                const style = document.createElement('style');
-                style.textContent = `
-                    .urgency-services-list {
-                        display: flex;
-                        flex-direction: column;
-                        gap: 20px;
-                        margin-top: 30px;
-                    }
-                    .urgency-service-item {
-                        background: rgba(255, 255, 255, 0.05);
-                        padding: 20px;
-                        border-radius: var(--border-radius);
-                        border: 1px solid rgba(255, 255, 255, 0.1);
-                    }
-                    .urgency-service-price {
-                        font-size: 1.5rem;
-                        font-weight: 700;
-                        color: var(--accent-color);
-                        margin: 10px 0;
-                    }
-                `;
-                document.head.appendChild(style);
-
-                // Обработчики событий
-                document.querySelector('#urgencyModal .close-modal').addEventListener('click', () => {
-                    document.getElementById('urgencyModal').remove();
-                });
-
-                document.querySelectorAll('.add-urgency-service').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const serviceId = parseInt(btn.dataset.id);
-                        const service = services.find(s => s.id === serviceId);
-
-                        if (service) {
-                            // Добавляем основную услугу
-                            const existingItem = this.cart.find(item => item.id === serviceId);
-
-                            if (existingItem) {
-                                existingItem.quantity += 1;
-                            } else {
-                                this.cart.push({
-                                    id: service.id,
-                                    name: service.name,
-                                    price: service.price,
-                                    pricePerPhoto: service.pricePerPhoto,
-                                    quantity: 1,
-                                    urgency: 'standard'
-                                });
-                            }
-
-                            // Добавляем срочную обработку
-                            const urgentService = services.find(s => s.id === 8);
-                            this.cart.push({
-                                id: urgentService.id,
-                                name: urgentService.name,
-                                price: service.price, // Цена равна цене основной услуги (будет умножена на 2 при расчёте)
-                                pricePerPhoto: service.pricePerPhoto,
-                                quantity: 1,
-                                urgency: 'urgent',
-                                linkedService: serviceId
-                            });
-
-                            this.saveCartToStorage();
-                            this.updateCartCount();
-                            this.showNotification(`"${service.name}" с срочной обработкой добавлено в корзину`);
-                            document.getElementById('urgencyModal').remove();
-
-                            if (this.isCartOpen()) {
-                                this.renderCart();
-                            }
-                        }
-                    });
-                });
-
-                document.getElementById('urgencyModal').addEventListener('click', (e) => {
-                    if (e.target === document.getElementById('urgencyModal')) {
-                        document.getElementById('urgencyModal').remove();
-                    }
-                });
-            },
-
-            // Удаление из корзины
-            removeFromCart(itemId) {
-                // Если удаляем основную услугу, удаляем и связанную срочную обработку
-                const item = this.cart.find(item => item.id === itemId);
-                if (item && item.linkedService) {
-                    this.cart = this.cart.filter(cartItem => 
-                        !(cartItem.id === 8 && cartItem.linkedService === itemId)
-                    );
-                }
-
-                this.cart = this.cart.filter(item => item.id !== itemId);
-                this.saveCartToStorage();
-                this.updateCartCount();
-                this.renderCart();
-            },
-
-            // Обновление количества
-            updateCartQuantity(itemId, quantity) {
-                const item = this.cart.find(item => item.id === itemId);
-                if (!item) return;
-
-                if (quantity < 1) {
-                    this.removeFromCart(itemId);
-                    return;
-                }
-
-                item.quantity = quantity;
-
-                // Обновляем связанную срочную обработку
-                if (item.id !== 8) {
-                    const urgentItem = this.cart.find(cartItem => 
-                        cartItem.id === 8 && cartItem.linkedService === itemId
-                    );
-                    if (urgentItem) {
-                        urgentItem.quantity = quantity;
-                    }
-                }
-
-                this.saveCartToStorage();
-                this.updateCartCount();
-                this.renderCart();
-            },
-
-            // Обновление срочности
-            updateCartUrgency(itemId, urgency) {
-                const item = this.cart.find(item => item.id === itemId);
-                if (!item) return;
-
-                item.urgency = urgency;
-                this.saveCartToStorage();
-                this.renderCart();
-            },
-
-            // Обновление счетчика корзины
-            updateCartCount() {
-                const count = this.cart.reduce((total, item) => total + item.quantity, 0);
-                document.getElementById('cartCount').textContent = count;
-            },
-
-            // Рендеринг корзины
-            renderCart() {
-                const cartItems = document.getElementById('cartItems');
-                const cartEmpty = document.getElementById('cartEmpty');
-                const cartSummary = document.getElementById('cartSummary');
-                const cartTotal = document.getElementById('cartTotal');
-
-                if (this.cart.length === 0) {
-                    cartItems.style.display = 'none';
-                    cartEmpty.style.display = 'block';
-                    cartSummary.style.display = 'none';
-                    return;
-                }
-
-                cartItems.style.display = 'block';
-                cartEmpty.style.display = 'none';
-                cartSummary.style.display = 'block';
-
-                // Очистка и рендеринг товаров
-                cartItems.innerHTML = '';
-                let total = 0;
-
-                this.cart.forEach((item, index) => {
-                    const service = services.find(s => s.id === item.id);
-                    if (!service) return;
-
-                    // Рассчитываем цену с учётом срочности
-                    let itemPrice = service.pricePerPhoto || service.price;
-                    if (item.id === 8 && item.linkedService) {
-                        // Для срочной обработки цена равна цене связанной услуги
-                        const linkedService = this.cart.find(s => s.id === item.linkedService);
-                        if (linkedService) {
-                            const linkedServiceData = services.find(s => s.id === linkedService.id);
-                            itemPrice = linkedServiceData.pricePerPhoto || linkedServiceData.price;
-                        }
-                    }
-
-                    // Множитель за срочность
-                    const urgencyMultiplier = item.urgency === 'urgent' ? 2 : 
-                                            item.urgency === 'super_urgent' ? 3 : 1;
-
-                    const itemTotal = itemPrice * item.quantity * urgencyMultiplier;
-                    total += itemTotal;
-
-                    const itemElement = document.createElement('div');
-                    itemElement.className = 'cart-item';
-                    itemElement.innerHTML = `
-                        <div class="cart-item-header">
-                            <div class="cart-item-title">${item.name}</div>
-                            <div class="cart-item-price">${itemTotal.toLocaleString()} ₽</div>
-                        </div>
-
-                        ${item.id !== 8 ? `
-                            <div class="cart-item-controls">
-                                <div class="quantity-selector">
-                                    <button class="quantity-btn minus" data-index="${index}">-</button>
-                                    <span class="cart-item-quantity">${item.quantity} фото</span>
-                                    <button class="quantity-btn plus" data-index="${index}">+</button>
-                                </div>
-
-                                <div class="urgency-selector">
-                                    <button class="urgency-btn ${item.urgency === 'standard' ? 'active' : ''}" 
-                                            data-index="${index}" data-urgency="standard">
-                                        Стандарт (${itemPrice.toLocaleString()} ₽)
-                                    </button>
-                                    <button class="urgency-btn ${item.urgency === 'urgent' ? 'active' : ''}" 
-                                            data-index="${index}" data-urgency="urgent">
-                                        Срочно (${(itemPrice * 2).toLocaleString()} ₽)
-                                    </button>
-                                    <button class="urgency-btn ${item.urgency === 'super_urgent' ? 'active' : ''}" 
-                                            data-index="${index}" data-urgency="super_urgent">
-                                        Очень срочно (${(itemPrice * 3).toLocaleString()} ₽)
-                                    </button>
-                                </div>
-
-                                <button class="remove-item" data-index="${index}">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        ` : `
-                            <div class="cart-item-controls">
-                                <div class="quantity-selector">
-                                    <button class="quantity-btn minus" data-index="${index}">-</button>
-                                    <span class="cart-item-quantity">${item.quantity} фото</span>
-                                    <button class="quantity-btn plus" data-index="${index}">+</button>
-                                </div>
-                                <button class="remove-item" data-index="${index}">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                            <p style="color: var(--accent-color); font-size: 0.9rem; margin-top: 10px;">
-                                <i class="fas fa-info-circle"></i> Применяется к связанной услуге
-                            </p>
-                        `}
-                    `;
-
-                    cartItems.appendChild(itemElement);
-
-                    // Обработчики для кнопок
-                    itemElement.querySelectorAll('.minus, .plus').forEach(btn => {
-                        btn.addEventListener('click', (e) => {
-                            const itemIndex = parseInt(e.target.closest('[data-index]').dataset.index);
-                            const item = this.cart[itemIndex];
-                            const newQuantity = e.target.classList.contains('minus') 
-                                ? item.quantity - 1 
-                                : item.quantity + 1;
-                            this.updateCartQuantity(item.id, newQuantity);
-                        });
-                    });
-
-                    itemElement.querySelectorAll('.urgency-btn').forEach(btn => {
-                        btn.addEventListener('click', (e) => {
-                            const itemIndex = parseInt(e.target.dataset.index);
-                            const urgency = e.target.dataset.urgency;
-                            this.updateCartUrgency(this.cart[itemIndex].id, urgency);
-                        });
-                    });
-
-                    itemElement.querySelector('.remove-item').addEventListener('click', (e) => {
-                        const itemIndex = parseInt(e.target.closest('[data-index]').dataset.index);
-                        this.removeFromCart(this.cart[itemIndex].id);
-                    });
-                });
-
-                cartTotal.textContent = total.toLocaleString() + ' ₽';
-            },
-
-            // Проверка открыта ли корзина
-            isCartOpen() {
-                return document.getElementById('cartSidebar').classList.contains('active');
-            },
-
-            // Показать уведомление
-            showNotification(message) {
-                const notification = document.getElementById('notification');
-                notification.textContent = message;
-                notification.classList.add('show');
-
-                setTimeout(() => {
-                    notification.classList.remove('show');
-                }, 3000);
-            },
-
-            // Настройка слайдера до/после
-            setupBeforeAfterSlider() {
-                const sliderContainer = document.getElementById('sliderContainer');
-                const sliderHandle = document.getElementById('sliderHandle');
-                const afterImage = document.getElementById('afterImage');
-
-                this.setupSlider(sliderContainer, sliderHandle, afterImage);
-            },
-
-            // Общая функция настройки слайдера
-            setupSlider(container, handle, afterImage) {
-                let isDragging = false;
-
-                const updateSlider = (clientX) => {
-                    const containerRect = container.getBoundingClientRect();
-                    let x = clientX - containerRect.left;
-
-                    // Ограничиваем движение в пределах контейнера
-                    x = Math.max(0, Math.min(x, containerRect.width));
-
-                    // Обновляем позицию ползунка
-                    handle.style.left = `${x}px`;
-
-                    // Обновляем обрезание изображения "после"
-                    const percent = (x / containerRect.width) * 100;
-                    afterImage.style.clipPath = `polygon(${percent}% 0, 100% 0, 100% 100%, ${percent}% 100%)`;
-                };
-
-                // Обработчики мыши
-                handle.addEventListener('mousedown', () => {
-                    isDragging = true;
-                    document.body.style.cursor = 'ew-resize';
-                });
-
-                document.addEventListener('mousemove', (e) => {
-                    if (!isDragging) return;
-                    updateSlider(e.clientX);
-                });
-
-                document.addEventListener('mouseup', () => {
-                    isDragging = false;
-                    document.body.style.cursor = '';
-                });
-
-                // Обработчики для касаний
-                handle.addEventListener('touchstart', (e) => {
-                    e.preventDefault();
-                    isDragging = true;
-                });
-
-                document.addEventListener('touchmove', (e) => {
-                    if (!isDragging || !e.touches[0]) return;
-                    updateSlider(e.touches[0].clientX);
-                });
-
-                document.addEventListener('touchend', () => {
-                    isDragging = false;
-                });
-
-                // Инициализация позиции
-                updateSlider(container.getBoundingClientRect().width / 2);
-            },
-
-            // Настройка калькулятора стоимости
-            setupCalculator() {
-                const photoCount = document.getElementById('photoCount');
-                const photoCountValue = document.getElementById('photoCountValue');
-                const complexity = document.getElementById('complexity');
-                const complexityValue = document.getElementById('complexityValue');
-                const urgency = document.getElementById('urgency');
-                const urgencyValue = document.getElementById('urgencyValue');
-                const totalPrice = document.getElementById('totalPrice');
-
-                const complexityLabels = ['Базовая', 'Профессиональная', 'Премиум'];
-                const urgencyLabels = ['Стандартная', 'Срочная', 'Очень срочная'];
-                const complexityMultipliers = [1, 1.5, 2];
-                const urgencyMultipliers = [1, 2, 3];
-
-                const updateCalculator = () => {
-                    const count = parseInt(photoCount.value);
-                    const complexityLevel = parseInt(complexity.value) - 1;
-                    const urgencyLevel = parseInt(urgency.value) - 1;
-
-                    // Базовая цена за 1 фото
-                    const basePrice = 1500;
-
-                    // Рассчитываем итоговую цену
-                    let price = basePrice * count;
-                    price *= complexityMultipliers[complexityLevel];
-                    price *= urgencyMultipliers[urgencyLevel];
-
-                    // Обновляем отображение
-                    photoCountValue.textContent = count;
-                    complexityValue.textContent = complexityLabels[complexityLevel];
-                    urgencyValue.textContent = urgencyLabels[urgencyLevel];
-                    totalPrice.textContent = price.toLocaleString() + ' ₽';
-                };
-
-                photoCount.addEventListener('input', updateCalculator);
-                complexity.addEventListener('input', updateCalculator);
-                urgency.addEventListener('input', updateCalculator);
-
-                // Инициализация
-                updateCalculator();
-            },
-
-            // Анимация статистики
-            animateStats() {
-                const statNumbers = document.querySelectorAll('.stat-number');
-
-                statNumbers.forEach(stat => {
-                    const target = parseInt(stat.getAttribute('data-target'));
-                    const increment = target / 100;
-                    let current = 0;
-
-                    const timer = setInterval(() => {
-                        current += increment;
-                        stat.textContent = Math.floor(current);
-
-                        if (current >= target) {
-                            stat.textContent = target;
-                            clearInterval(timer);
-                        }
-                    }, 20);
-                });
-            },
-
-            // Эффекты при скролле
-            setupScrollEffects() {
-                const header = document.getElementById('header');
-
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 50) {
-                        header.classList.add('scrolled');
-                    } else {
-                        header.classList.remove('scrolled');
-                    }
-                });
-            },
-
-            // Настройка обработчиков событий
-            setupEventListeners() {
-                // Переключение языка
-                document.getElementById('langToggle').addEventListener('click', () => {
-                    const currentLang = document.getElementById('langToggle').textContent;
-                    const newLang = currentLang === 'RU' ? 'EN' : 'RU';
-                    document.getElementById('langToggle').textContent = newLang;
-                    this.showNotification(`Язык переключен на ${newLang === 'RU' ? 'русский' : 'английский'}`);
-                });
-
-                // Мобильное меню
-                document.getElementById('menuToggle').addEventListener('click', () => {
-                    document.getElementById('mobileMenu').classList.add('active');
-                });
-
-                document.getElementById('closeMenu').addEventListener('click', () => {
-                    document.getElementById('mobileMenu').classList.remove('active');
-                });
-
-                // Корзина
-                document.getElementById('cartToggle').addEventListener('click', () => {
-                    this.renderCart();
-                    document.getElementById('cartSidebar').classList.add('active');
-                });
-
-                document.getElementById('mobileCartBtn').addEventListener('click', (e) => {
-                    e.preventDefault();
-                    this.renderCart();
-                    document.getElementById('cartSidebar').classList.add('active');
-                    document.getElementById('mobileMenu').classList.remove('active');
-                });
-
-                document.getElementById('closeCart').addEventListener('click', () => {
-                    document.getElementById('cartSidebar').classList.remove('active');
-                });
-
-                // Фильтры услуг
-                document.querySelectorAll('#services .filter-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        document.querySelectorAll('#services .filter-btn').forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
-                        this.currentServiceFilter = btn.dataset.filter;
-                        this.renderServices();
-                    });
-                });
-
-                // Фильтры портфолио
-                document.querySelectorAll('#portfolio .filter-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        document.querySelectorAll('#portfolio .filter-btn').forEach(b => b.classList.remove('active'));
-                        btn.classList.add('active');
-                        this.currentPortfolioFilter = btn.dataset.filter;
-                        this.renderPortfolio();
-                    });
-                });
-
-                // Форма корзины
-                document.getElementById('cartForm').addEventListener('submit', (e) => {
-                    e.preventDefault();
-
-                    const name = document.getElementById('clientName').value;
-                    const email = document.getElementById('clientEmail').value;
-                    const phone = document.getElementById('clientPhone').value;
-                    const deliveryMethod = document.getElementById('deliveryMethod').value;
-                    const deadline = document.getElementById('deadline').value;
-                    const message = document.getElementById('clientMessage').value;
-
-                    // Здесь должна быть отправка на сервер
-                    console.log('Заявка отправлена:', { 
-                        name, email, phone, deliveryMethod, deadline, message, 
-                        cart: this.cart,
-                        total: this.calculateCartTotal()
-                    });
-
-                    this.showNotification('Заявка отправлена! Я свяжусь с вами в течение 2 часов.');
-                    this.cart = [];
-                    this.saveCartToStorage();
-                    this.updateCartCount();
-                    this.renderCart();
-                    e.target.reset();
-                    document.getElementById('cartSidebar').classList.remove('active');
-                });
-
-                // Навигация
-                document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const targetId = link.getAttribute('href');
-                        const targetElement = document.querySelector(targetId);
-
-                        if (targetElement) {
-                            window.scrollTo({
-                                top: targetElement.offsetTop - 100,
-                                behavior: 'smooth'
-                            });
-                        }
-
-                        // Обновление активной ссылки
-                        document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(l => {
-                            l.classList.remove('active');
-                        });
-                        link.classList.add('active');
-
-                        // Закрытие мобильного меню
-                        document.getElementById('mobileMenu').classList.remove('active');
-                    });
-                });
-
-                // Закрытие корзины при клике вне
-                document.addEventListener('click', (e) => {
-                    const cartSidebar = document.getElementById('cartSidebar');
-                    if (!cartSidebar.contains(e.target) && 
-                        !e.target.closest('#cartToggle') && 
-                        !e.target.closest('#mobileCartBtn') &&
-                        cartSidebar.classList.contains('active')) {
-                        cartSidebar.classList.remove('active');
-                    }
-                });
-            },
-
-            // Расчет общей стоимости корзины
-            calculateCartTotal() {
-                return this.cart.reduce((total, item) => {
-                    const service = services.find(s => s.id === item.id);
-                    if (!service) return total;
-
-                    let itemPrice = service.pricePerPhoto || service.price;
-                    if (item.id === 8 && item.linkedService) {
-                        const linkedService = this.cart.find(s => s.id === item.linkedService);
-                        if (linkedService) {
-                            const linkedServiceData = services.find(s => s.id === linkedService.id);
-                            itemPrice = linkedServiceData.pricePerPhoto || linkedServiceData.price;
-                        }
-                    }
-
-                    const urgencyMultiplier = item.urgency === 'urgent' ? 2 : 
-                                            item.urgency === 'super_urgent' ? 3 : 1;
-
-                    return total + (itemPrice * item.quantity * urgencyMultiplier);
-                }, 0);
-            }
-        };
-
-        // Инициализация при загрузке страницы
-        document.addEventListener('DOMContentLoaded', () => {
-            PhotoEditorApp.init();
+</header>
+
+<section class="hero" id="home">
+    <div class="container">
+        <div class="hero-grid">
+            <div>
+                <h1>Татьяна</h1>
+                <h2>Профессиональный фоторедактор</h2>
+                <p>Специализируюсь на профессиональной ретуши фотографий, колористике и композитинге. Работаю с фотографами, модельными агентствами и брендами по всему миру.</p>
+                
+                <div class="stats">
+                    <div class="stat-card"><div class="stat-number">8 лет</div><div>опыта</div></div>
+                    <div class="stat-card"><div class="stat-number">2500+</div><div>обработанных фото</div></div>
+                    <div class="stat-card"><div class="stat-number">98%</div><div>довольных клиентов</div></div>
+                </div>
+            </div>
+            <div>
+                <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?w=600&auto=format" alt="Фоторедактор" style="width:100%; border-radius:30px; box-shadow:0 20px 40px rgba(0,0,0,0.3);">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services" id="services">
+    <div class="container">
+        <div class="section-header"><h2>Услуги и цены</h2><p>Профессиональная обработка фотографий</p></div>
+        <div class="services-grid" id="servicesGrid"></div>
+
+        <div class="calculator">
+            <h3 style="text-align:center; margin-bottom:20px;">💰 Калькулятор стоимости</h3>
+            <div class="calculator-grid">
+                <div class="calc-group"><label>Тип обработки</label><select id="calcType"><option value="basic">Базовая ретушь</option><option value="portrait">Портретная ретушь</option><option value="product">Предметная ретушь</option></select></div>
+                <div class="calc-group"><label>Количество фото: <span id="photosCount">1</span></label><input type="range" id="calcPhotos" min="1" max="50" value="1" step="1"></div>
+                <div class="calc-group"><label>Срочность</label><select id="calcUrgent"><option value="1">Обычный срок</option><option value="1.5">Срочно (+50%)</option></select></div>
+            </div>
+            <div class="calc-total"><h4>Стоимость</h4><div class="total-price" id="calcTotal">1 500 ₽</div></div>
+        </div>
+    </div>
+</section>
+
+<section class="portfolio" id="portfolio">
+    <div class="container">
+        <div class="section-header"><h2>Примеры работ</h2><p>До и после обработки</p></div>
+        <div class="portfolio-grid" id="portfolioGrid"></div>
+    </div>
+</section>
+
+<footer class="footer" id="contact">
+    <div class="container">
+        <div class="footer-grid">
+            <div><h3>Навигация</h3><p><a href="#home">Главная</a></p><p><a href="#services">Услуги</a></p><p><a href="#portfolio">Портфолио</a></p></div>
+            <div><h3>Услуги</h3><p>Базовая ретушь</p><p>Портретная ретушь</p><p>Предметная ретушь</p><p>Реставрация фото</p></div>
+            <div><h3>Контакты</h3><div class="contact-item"><i class="fas fa-envelope"></i> tanya.photo@mail.ru</div><div class="contact-item"><i class="fas fa-phone"></i> +7 (999) 123-45-67</div><div class="social-links"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a><a href="#" class="social-link"><i class="fab fa-telegram"></i></a></div></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2025 Татьяна — Профессиональный фоторедактор</p></div>
+    </div>
+</footer>
+
+<div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header"><h3>🛒 Корзина</h3><button class="close-cart" id="closeCart"><i class="fas fa-times"></i></button></div>
+    <div id="cartItems"></div>
+    <div id="cartEmpty" style="text-align:center; padding:40px;"><i class="fas fa-shopping-cart" style="font-size:3rem; opacity:0.3;"></i><p>Корзина пуста</p></div>
+    <div id="cartSummary" style="display:none;"><div class="cart-total"><span>Итого:</span><span id="cartTotal">0 ₽</span></div><button class="btn btn-gold" id="checkoutBtn" style="width:100%;">Оформить заказ</button></div>
+</div>
+
+<script>
+    const servicesData = [
+        { id:1, name:"Базовая ретушь", price:1500, features:["Удаление дефектов","Коррекция цвета","Кадрирование"], icon:"fa-magic" },
+        { id:2, name:"Портретная ретушь", price:3500, features:["Ретушь кожи","Пластика","Светотень"], icon:"fa-user" },
+        { id:3, name:"Предметная ретушь", price:2500, features:["Удаление пыли","Замена фона","Цветокоррекция"], icon:"fa-box" }
+    ];
+
+    const portfolioData = [
+        { title:"Портрет до/после", before:"https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300", after:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300" },
+        { title:"Предметная съёмка", before:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300", after:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300" }
+    ];
+
+    let cart = JSON.parse(localStorage.getItem("photo_cart") || "[]");
+
+    function saveCart() { localStorage.setItem("photo_cart", JSON.stringify(cart)); updateCartCount(); renderCart(); }
+    function updateCartCount() { document.getElementById("cartCount").innerText = cart.reduce((s,i)=>s+i.qty,0); }
+    function showNotif(msg) { let n=document.getElementById("notification"); n.innerText=msg; n.classList.add("show"); setTimeout(()=>n.classList.remove("show"),2500); }
+
+    function addToCart(id){
+        let item = servicesData.find(s=>s.id==id);
+        if(item){
+            let existing = cart.find(i=>i.id==id);
+            if(existing) existing.qty++;
+            else cart.push({id:item.id, name:item.name, price:item.price, qty:1});
+            saveCart();
+            showNotif(`✅ ${item.name} добавлено`);
+        }
+    }
+
+    function removeFromCart(idx) { cart.splice(idx,1); saveCart(); }
+    function updateQty(idx,delta) { if(cart[idx]){ cart[idx].qty+=delta; if(cart[idx].qty<1) cart.splice(idx,1); saveCart(); } }
+
+    function renderCart(){
+        let container = document.getElementById("cartItems");
+        let emptyDiv = document.getElementById("cartEmpty");
+        let summaryDiv = document.getElementById("cartSummary");
+        if(!cart.length){ container.innerHTML=""; emptyDiv.style.display="block"; summaryDiv.style.display="none"; return; }
+        emptyDiv.style.display="none"; summaryDiv.style.display="block";
+        let html=""; let total=0;
+        cart.forEach((item,idx)=>{
+            let subtotal = item.price * item.qty;
+            total += subtotal;
+            html += `<div class="cart-item"><div class="cart-item-header"><span>${item.name}</span><span>${subtotal.toLocaleString()} ₽</span></div><div><button class="btn-outline" style="padding:5px 12px;" onclick="updateQty(${idx},-1)">-</button> ${item.qty} <button class="btn-outline" style="padding:5px 12px;" onclick="updateQty(${idx},1)">+</button> <button style="background:none; border:none; color:#ff6b6b; margin-left:10px;" onclick="removeFromCart(${idx})"><i class="fas fa-trash"></i></button></div></div>`;
         });
-    </script>
+        container.innerHTML = html;
+        document.getElementById("cartTotal").innerHTML = total.toLocaleString() + " ₽";
+    }
+
+    function renderServices(){
+        document.getElementById("servicesGrid").innerHTML = servicesData.map(s => `
+            <div class="service-card"><i class="fas ${s.icon}"></i><h3>${s.name}</h3><div class="service-price">от ${s.price.toLocaleString()} ₽</div><ul class="service-features">${s.features.map(f=>`<li><i class="fas fa-check"></i> ${f}</li>`).join('')}</ul><button class="btn btn-gold" onclick="addToCart(${s.id})"><i class="fas fa-cart-plus"></i> В корзину</button></div>
+        `).join('');
+    }
+
+    function renderPortfolio(){
+        document.getElementById("portfolioGrid").innerHTML = portfolioData.map(p => `
+            <div class="portfolio-card"><img src="${p.before}" alt="до"><div class="before-after"><span>До</span><i class="fas fa-arrow-right"></i><span>После</span></div><img src="${p.after}" alt="после"><h3>${p.title}</h3></div>
+        `).join('');
+    }
+
+    function setupCalculator(){
+        let type=document.getElementById("calcType"), photos=document.getElementById("calcPhotos"), urgent=document.getElementById("calcUrgent");
+        let countSpan=document.getElementById("photosCount"), totalSpan=document.getElementById("calcTotal");
+        function update(){
+            let base= type.value==="basic"?1500: type.value==="portrait"?3500:2500;
+            let p=parseInt(photos.value);
+            let price=base*p;
+            if(urgent.value=="1.5") price*=1.5;
+            countSpan.innerText=p;
+            totalSpan.innerText=price.toLocaleString()+" ₽";
+        }
+        type.addEventListener("change",update); photos.addEventListener("input",update); urgent.addEventListener("change",update);
+        update();
+    }
+
+    document.getElementById("cartToggle")?.addEventListener("click",()=>document.getElementById("cartSidebar").classList.add("active"));
+    document.getElementById("closeCart")?.addEventListener("click",()=>document.getElementById("cartSidebar").classList.remove("active"));
+    document.getElementById("checkoutBtn")?.addEventListener("click",()=>{ showNotif("✅ Заявка отправлена! Свяжусь с вами в течение 30 минут."); cart=[]; saveCart(); renderCart(); document.getElementById("cartSidebar").classList.remove("active"); });
+    document.getElementById("menuToggle")?.addEventListener("click",()=>alert("📱 Меню в разработке"));
+
+    renderServices(); renderPortfolio(); setupCalculator(); renderCart(); updateCartCount();
+</script>
 </body>
 </html>
