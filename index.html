@@ -194,11 +194,9 @@
             padding-top: 110px;
             background: linear-gradient(135deg, #0a254e, #1a365d);
         }
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            align-items: center;
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
         }
         .hero h1 {
             font-size: 2.5rem;
@@ -206,48 +204,44 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-bottom: 10px;
+            text-align: center;
         }
         .hero h2 {
             font-size: 1.3rem;
             color: #ffd700;
             margin-bottom: 15px;
+            text-align: center;
         }
         .hero p {
             font-size: 0.95rem;
             margin-bottom: 20px;
+            text-align: center;
         }
-        /* БЛОК С КНОПКАМИ — вместо пустой картинки */
-        .hero-buttons {
+        /* СТАТИСТИКА И КНОПКИ В ОДНОЙ СТРОКЕ */
+        .stats-buttons-row {
             display: flex;
-            flex-direction: column;
-            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            height: 100%;
-        }
-        .hero-buttons .btn {
-            width: 100%;
-            max-width: 280px;
-            padding: 14px 20px;
-            font-size: 1rem;
-        }
-        .stats-wrapper {
+            gap: 30px;
             background: rgba(0, 0, 0, 0.3);
             border-radius: 20px;
-            padding: 20px;
+            padding: 20px 30px;
             margin: 30px 0;
             border: 1px solid rgba(255, 215, 0, 0.2);
         }
         .stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            flex: 2;
         }
         .stat-card {
             background: rgba(255, 255, 255, 0.08);
-            padding: 15px;
+            padding: 15px 20px;
             border-radius: 16px;
+            text-align: center;
+            min-width: 100px;
         }
         .stat-number {
             font-size: 2rem;
@@ -256,10 +250,16 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .hero-actions {
+        .hero-buttons {
             display: flex;
-            gap: 15px;
-            margin-top: 20px;
+            flex-direction: column;
+            gap: 12px;
+            flex: 1;
+        }
+        .hero-buttons .btn {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 0.95rem;
         }
         .services {
             background: #1a365d;
@@ -532,27 +532,29 @@
         @media (max-width: 992px) {
             .nav-menu { display: none; }
             .menu-toggle { display: block; }
-            .hero-grid { grid-template-columns: 1fr; }
-            .stats { grid-template-columns: repeat(2, 1fr); }
-            .advantages-grid { grid-template-columns: repeat(2, 1fr); }
-            .hero-buttons {
-                flex-direction: row;
-                justify-content: center;
-                margin-top: 30px;
+            .stats-buttons-row {
+                flex-direction: column;
+                text-align: center;
             }
+            .stats {
+                justify-content: center;
+            }
+            .hero-buttons {
+                width: 100%;
+                flex-direction: row;
+            }
+            .advantages-grid { grid-template-columns: repeat(2, 1fr); }
         }
         @media (max-width: 576px) {
-            .stats { grid-template-columns: 1fr; }
-            .advantages-grid { grid-template-columns: 1fr; }
-            .hero-actions { flex-direction: column; }
-            .btn { width: 100%; }
+            .stats {
+                flex-direction: column;
+                align-items: center;
+            }
             .hero-buttons {
                 flex-direction: column;
-                align-items: stretch;
             }
-            .hero-buttons .btn {
-                max-width: 100%;
-            }
+            .advantages-grid { grid-template-columns: 1fr; }
+            .btn { width: 100%; }
         }
     </style>
 </head>
@@ -589,21 +591,18 @@
 
 <section class="hero" id="home">
     <div class="container">
-        <div class="hero-grid">
-            <div>
-                <h1>Татьяна</h1>
-                <h2>Профессиональный фоторедактор</h2>
-                <p>Специализируюсь на профессиональной ретуши фотографий, колористике и композитинге. Работаю с фотографами, модельными агентствами и брендами по всему миру.</p>
-                <div class="stats-wrapper">
-                    <div class="stats">
-                        <div class="stat-card"><div class="stat-number">8 лет</div><div>опыта</div></div>
-                        <div class="stat-card"><div class="stat-number">2500+</div><div>обработанных фото</div></div>
-                        <div class="stat-card"><div class="stat-number">98%</div><div>довольных клиентов</div></div>
-                    </div>
+        <div class="hero-content">
+            <h1>Татьяна</h1>
+            <h2>Профессиональный фоторедактор</h2>
+            <p>Специализируюсь на профессиональной ретуши фотографий, колористике и композитинге. Работаю с фотографами, модельными агентствами и брендами по всему миру.</p>
+
+            <!-- СТАТИСТИКА + КНОПКИ В РЯД -->
+            <div class="stats-buttons-row">
+                <div class="stats">
+                    <div class="stat-card"><div class="stat-number">8 лет</div><div>опыта</div></div>
+                    <div class="stat-card"><div class="stat-number">2500+</div><div>обработанных фото</div></div>
+                    <div class="stat-card"><div class="stat-number">98%</div><div>довольных клиентов</div></div>
                 </div>
-            </div>
-            <div>
-                <!-- ВМЕСТО ПУСТОЙ КАРТИНКИ — БЛОК С КНОПКАМИ -->
                 <div class="hero-buttons">
                     <a href="#services" class="btn btn-gold"><i class="fas fa-cart-plus"></i> Заказать обработку</a>
                     <a href="#contact" class="btn btn-outline"><i class="fas fa-headset"></i> Бесплатная консультация</a>
