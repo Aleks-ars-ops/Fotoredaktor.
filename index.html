@@ -216,11 +216,20 @@
             font-size: 0.95rem;
             margin-bottom: 20px;
         }
-        /* Картинка сверху — теперь точно будет работать */
-        .hero-image {
+        /* БЛОК С КНОПКАМИ — вместо пустой картинки */
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .hero-buttons .btn {
             width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 30px rgba(0,0,0,0.3);
+            max-width: 280px;
+            padding: 14px 20px;
+            font-size: 1rem;
         }
         .stats-wrapper {
             background: rgba(0, 0, 0, 0.3);
@@ -526,12 +535,24 @@
             .hero-grid { grid-template-columns: 1fr; }
             .stats { grid-template-columns: repeat(2, 1fr); }
             .advantages-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-buttons {
+                flex-direction: row;
+                justify-content: center;
+                margin-top: 30px;
+            }
         }
         @media (max-width: 576px) {
             .stats { grid-template-columns: 1fr; }
             .advantages-grid { grid-template-columns: 1fr; }
             .hero-actions { flex-direction: column; }
             .btn { width: 100%; }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .hero-buttons .btn {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -580,14 +601,13 @@
                         <div class="stat-card"><div class="stat-number">98%</div><div>довольных клиентов</div></div>
                     </div>
                 </div>
-                <div class="hero-actions">
+            </div>
+            <div>
+                <!-- ВМЕСТО ПУСТОЙ КАРТИНКИ — БЛОК С КНОПКАМИ -->
+                <div class="hero-buttons">
                     <a href="#services" class="btn btn-gold"><i class="fas fa-cart-plus"></i> Заказать обработку</a>
                     <a href="#contact" class="btn btn-outline"><i class="fas fa-headset"></i> Бесплатная консультация</a>
                 </div>
-            </div>
-            <div>
-                <!-- КАРТИНКА СВЕРХУ (гарантированно работает) -->
-                <img class="hero-image" src="https://images.pexels.com/photos/1181695/pexels-photo-1181695.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Фоторедактор за работой">
             </div>
         </div>
     </div>
