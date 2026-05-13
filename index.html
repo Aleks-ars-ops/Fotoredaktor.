@@ -21,7 +21,7 @@
         }
 
         .container {
-            max-width: 1300px;
+            max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
         }
@@ -98,7 +98,6 @@
             transform: translateY(-3px);
         }
 
-        /* Шапка */
         .header {
             position: fixed;
             top: 0;
@@ -218,7 +217,6 @@
             cursor: pointer;
         }
 
-        /* Герой */
         .hero {
             padding-top: 140px;
             background: linear-gradient(135deg, #0a254e, #1a365d);
@@ -245,25 +243,26 @@
             margin-bottom: 20px;
         }
 
+        .stats-wrapper {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 30px;
+            padding: 30px;
+            margin: 40px 0;
+            border: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
         .stats {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
-            margin: 40px 0;
+            text-align: center;
         }
 
         .stat-card {
             background: rgba(255, 255, 255, 0.08);
-            padding: 25px 15px;
+            padding: 25px;
             border-radius: 20px;
-            text-align: center;
             border: 1px solid rgba(255, 215, 0, 0.2);
-            transition: 0.3s;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-            border-color: #ffd700;
         }
 
         .stat-number {
@@ -274,14 +273,13 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Услуги */
         .services {
             background: #1a365d;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 30px;
         }
 
@@ -299,16 +297,22 @@
         }
 
         .service-card i {
-            font-size: 2.5rem;
+            font-size: 2rem;
             color: #ffd700;
             margin-bottom: 15px;
         }
 
         .service-price {
-            font-size: 1.6rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: #ffd700;
             margin: 15px 0;
+        }
+
+        .service-duration {
+            color: #cbd5e0;
+            font-size: 0.9rem;
+            margin: 10px 0;
         }
 
         .service-features {
@@ -321,16 +325,16 @@
             align-items: center;
             gap: 10px;
             margin-bottom: 10px;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #cbd5e0;
         }
 
         .service-features i {
             color: #ffd700;
-            width: 20px;
+            width: 18px;
+            font-size: 0.8rem;
         }
 
-        /* Калькулятор */
         .calculator {
             background: rgba(255, 255, 255, 0.03);
             border-radius: 20px;
@@ -350,11 +354,6 @@
             display: flex;
             flex-direction: column;
             gap: 8px;
-        }
-
-        .calc-group label {
-            color: #cbd5e0;
-            font-size: 0.9rem;
         }
 
         select, input {
@@ -380,36 +379,89 @@
             -webkit-text-fill-color: transparent;
         }
 
-        /* Портфолио */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 30px;
         }
 
         .portfolio-card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            padding: 25px;
-            text-align: center;
+            overflow: hidden;
             border: 1px solid rgba(255, 215, 0, 0.15);
         }
 
         .portfolio-card img {
             width: 100%;
-            border-radius: 15px;
-            margin-bottom: 15px;
+            height: 250px;
+            object-fit: cover;
         }
 
-        .before-after {
+        .portfolio-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer {
+            background: #0a254e;
+            padding: 50px 0 20px;
+            border-top: 1px solid rgba(255, 215, 0, 0.1);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer h3 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+
+        .footer a {
+            color: #cbd5e0;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: #ffd700;
+        }
+
+        .contact-item {
             display: flex;
-            gap: 10px;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social-link {
+            width: 38px;
+            height: 38px;
+            background: rgba(255, 215, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
             justify-content: center;
-            margin: 15px 0;
+            color: #ffd700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             font-size: 0.8rem;
         }
 
-        /* Корзина */
         .cart-sidebar {
             position: fixed;
             top: 0;
@@ -452,12 +504,6 @@
             margin-bottom: 15px;
         }
 
-        .cart-item-header {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
         .cart-total {
             display: flex;
             justify-content: space-between;
@@ -466,73 +512,6 @@
             margin: 20px 0;
             padding-top: 20px;
             border-top: 1px solid rgba(255, 215, 0, 0.2);
-        }
-
-        /* Футер */
-        .footer {
-            background: #0a254e;
-            padding: 50px 0 20px;
-            border-top: 1px solid rgba(255, 215, 0, 0.1);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 40px;
-            margin-bottom: 30px;
-        }
-
-        .footer h3 {
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            color: #ffd700;
-        }
-
-        .footer a {
-            color: #cbd5e0;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .footer a:hover {
-            color: #ffd700;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            margin-bottom: 12px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .social-link {
-            width: 38px;
-            height: 38px;
-            background: rgba(255, 215, 0, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #ffd700;
-            transition: 0.3s;
-        }
-
-        .social-link:hover {
-            background: #ffd700;
-            color: #0a254e;
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            font-size: 0.8rem;
         }
 
         .notification {
@@ -565,12 +544,6 @@
             }
             .stats {
                 grid-template-columns: repeat(2, 1fr);
-            }
-            .header-right {
-                gap: 10px;
-            }
-            .header-phone span {
-                display: none;
             }
         }
 
@@ -624,15 +597,17 @@
                 <h1>Татьяна</h1>
                 <h2>Профессиональный фоторедактор</h2>
                 <p>Специализируюсь на профессиональной ретуши фотографий, колористике и композитинге. Работаю с фотографами, модельными агентствами и брендами по всему миру.</p>
-                
-                <div class="stats">
-                    <div class="stat-card"><div class="stat-number">8 лет</div><div>опыта</div></div>
-                    <div class="stat-card"><div class="stat-number">2500+</div><div>обработанных фото</div></div>
-                    <div class="stat-card"><div class="stat-number">98%</div><div>довольных клиентов</div></div>
+
+                <div class="stats-wrapper">
+                    <div class="stats">
+                        <div class="stat-card"><div class="stat-number">8 лет</div><div>опыта</div></div>
+                        <div class="stat-card"><div class="stat-number">2500+</div><div>обработанных фото</div></div>
+                        <div class="stat-card"><div class="stat-number">98%</div><div>довольных клиентов</div></div>
+                    </div>
                 </div>
             </div>
             <div>
-                <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?w=600&auto=format" alt="Фоторедактор" style="width:100%; border-radius:30px; box-shadow:0 20px 40px rgba(0,0,0,0.3);">
+                <img src="https://images.unsplash.com/photo-1611262588024-d12430b98920?w=600&auto=format" alt="Фоторедактор" style="width:100%; border-radius:30px;">
             </div>
         </div>
     </div>
@@ -640,7 +615,7 @@
 
 <section class="services" id="services">
     <div class="container">
-        <div class="section-header"><h2>Услуги и цены</h2><p>Профессиональная обработка фотографий</p></div>
+        <div class="section-header"><h2>Услуги и цены</h2><p>Профессиональная обработка фотографий с гарантией качества</p></div>
         <div class="services-grid" id="servicesGrid"></div>
 
         <div class="calculator">
@@ -650,7 +625,7 @@
                 <div class="calc-group"><label>Количество фото: <span id="photosCount">1</span></label><input type="range" id="calcPhotos" min="1" max="50" value="1" step="1"></div>
                 <div class="calc-group"><label>Срочность</label><select id="calcUrgent"><option value="1">Обычный срок</option><option value="1.5">Срочно (+50%)</option></select></div>
             </div>
-            <div class="calc-total"><h4>Стоимость</h4><div class="total-price" id="calcTotal">1 500 ₽</div></div>
+            <div class="calc-total"><h4>Примерная стоимость</h4><div class="total-price" id="calcTotal">1 500 ₽</div><p>Точная стоимость после оценки фото</p></div>
         </div>
     </div>
 </section>
@@ -666,7 +641,7 @@
     <div class="container">
         <div class="footer-grid">
             <div><h3>Навигация</h3><p><a href="#home">Главная</a></p><p><a href="#services">Услуги</a></p><p><a href="#portfolio">Портфолио</a></p></div>
-            <div><h3>Услуги</h3><p>Базовая ретушь</p><p>Портретная ретушь</p><p>Предметная ретушь</p><p>Реставрация фото</p></div>
+            <div><h3>Услуги</h3><p>Базовая ретушь</p><p>Портретная ретушь</p><p>Предметная ретушь</p><p>Реставрация фото</p><p>Колористика</p><p>Композитинг</p></div>
             <div><h3>Контакты</h3><div class="contact-item"><i class="fas fa-envelope"></i> tanya.photo@mail.ru</div><div class="contact-item"><i class="fas fa-phone"></i> +7 (999) 123-45-67</div><div class="social-links"><a href="#" class="social-link"><i class="fab fa-instagram"></i></a><a href="#" class="social-link"><i class="fab fa-telegram"></i></a></div></div>
         </div>
         <div class="footer-bottom"><p>&copy; 2025 Татьяна — Профессиональный фоторедактор</p></div>
@@ -682,14 +657,19 @@
 
 <script>
     const servicesData = [
-        { id:1, name:"Базовая ретушь", price:1500, features:["Удаление дефектов","Коррекция цвета","Кадрирование"], icon:"fa-magic" },
-        { id:2, name:"Портретная ретушь", price:3500, features:["Ретушь кожи","Пластика","Светотень"], icon:"fa-user" },
-        { id:3, name:"Предметная ретушь", price:2500, features:["Удаление пыли","Замена фона","Цветокоррекция"], icon:"fa-box" }
+        { id:1, name:"Базовая ретушь", price:1500, duration:"1-2 дня", features:["Удаление временных дефектов кожи","Коррекция цвета и контраста","Баланс белого","Кадрирование и выравнивание"], icon:"fa-magic" },
+        { id:2, name:"Портретная ретушь", price:3500, duration:"2-3 дня", features:["Глубокая ретушь кожи (Dodge & Burn)","Пластика и коррекция фигуры","Художественная обработка","Работа со светом и тенью","Улучшение текстуры кожи"], icon:"fa-user" },
+        { id:3, name:"Предметная ретушь", price:2500, duration:"1-2 дня", features:["Удаление пыли и царапин","Замена фона","Точная цветокоррекция","Создание теней и отражений","Подготовка для печати"], icon:"fa-box" },
+        { id:4, name:"Реставрация старых фото", price:5000, duration:"3-5 дней", features:["Удаление царапин и трещин","Восстановление утраченных фрагментов","Реставрация цвета","Устранение заломов и пятен","Повышение резкости"], icon:"fa-history" },
+        { id:5, name:"Колористика и тонирование", price:3000, duration:"2-3 дня", features:["Создание цветовых схем","Кинематографичные тона","Сезонная цветокоррекция","Стилизация под плёнку","Создание атмосферы"], icon:"fa-palette" },
+        { id:6, name:"Композитинг и монтаж", price:8000, duration:"3-7 дней", features:["Замена и создание фона","Добавление/удаление объектов","Создание композитов","Реалистичное совмещение","Художественный монтаж"], icon:"fa-layer-group" },
+        { id:7, name:"Пакетная обработка", price:50000, duration:"7-14 дней", features:["Обработка от 50 фото","Скидка 30% от базовой цены","Единый стиль для всех фото","Быстрая пакетная обработка","Идеально для мероприятий"], icon:"fa-images" },
+        { id:8, name:"Срочная обработка", price:0, duration:"24 часа", features:["Обработка в течение 24 часов","Приоритет в очереди","Быстрая связь","Экспресс-коррекции","Доплата 100%"], icon:"fa-bolt", multiplier:2 }
     ];
 
     const portfolioData = [
-        { title:"Портрет до/после", before:"https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300", after:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300" },
-        { title:"Предметная съёмка", before:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300", after:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300" }
+        { before:"https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400", after:"https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400", title:"Портретная ретушь" },
+        { before:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400", after:"https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400", title:"Предметная съёмка" }
     ];
 
     let cart = JSON.parse(localStorage.getItem("photo_cart") || "[]");
@@ -702,10 +682,11 @@
         let item = servicesData.find(s=>s.id==id);
         if(item){
             let existing = cart.find(i=>i.id==id);
+            let price = item.multiplier ? 0 : item.price;
             if(existing) existing.qty++;
-            else cart.push({id:item.id, name:item.name, price:item.price, qty:1});
+            else cart.push({id:item.id, name:item.name, price:price, qty:1, multiplier:item.multiplier});
             saveCart();
-            showNotif(`✅ ${item.name} добавлено`);
+            showNotif(`✅ ${item.name} добавлено в корзину`);
         }
     }
 
@@ -720,7 +701,9 @@
         emptyDiv.style.display="none"; summaryDiv.style.display="block";
         let html=""; let total=0;
         cart.forEach((item,idx)=>{
-            let subtotal = item.price * item.qty;
+            let mainItem = servicesData.find(s=>s.id==item.id);
+            let itemPrice = item.multiplier ? (cart.find(i=>i.id!=item.id && i.multiplier==undefined)?.price || 1500) * item.multiplier : item.price;
+            let subtotal = itemPrice * item.qty;
             total += subtotal;
             html += `<div class="cart-item"><div class="cart-item-header"><span>${item.name}</span><span>${subtotal.toLocaleString()} ₽</span></div><div><button class="btn-outline" style="padding:5px 12px;" onclick="updateQty(${idx},-1)">-</button> ${item.qty} <button class="btn-outline" style="padding:5px 12px;" onclick="updateQty(${idx},1)">+</button> <button style="background:none; border:none; color:#ff6b6b; margin-left:10px;" onclick="removeFromCart(${idx})"><i class="fas fa-trash"></i></button></div></div>`;
         });
@@ -730,13 +713,13 @@
 
     function renderServices(){
         document.getElementById("servicesGrid").innerHTML = servicesData.map(s => `
-            <div class="service-card"><i class="fas ${s.icon}"></i><h3>${s.name}</h3><div class="service-price">от ${s.price.toLocaleString()} ₽</div><ul class="service-features">${s.features.map(f=>`<li><i class="fas fa-check"></i> ${f}</li>`).join('')}</ul><button class="btn btn-gold" onclick="addToCart(${s.id})"><i class="fas fa-cart-plus"></i> В корзину</button></div>
+            <div class="service-card"><i class="fas ${s.icon}"></i><h3>${s.name}</h3><div class="service-price">${s.multiplier ? "+100%" : `от ${s.price.toLocaleString()} ₽`}</div><div class="service-duration"><i class="far fa-clock"></i> Срок: ${s.duration}</div><ul class="service-features">${s.features.map(f=>`<li><i class="fas fa-check"></i> ${f}</li>`).join('')}</ul><button class="btn btn-gold" onclick="addToCart(${s.id})"><i class="fas fa-cart-plus"></i> В корзину</button></div>
         `).join('');
     }
 
     function renderPortfolio(){
         document.getElementById("portfolioGrid").innerHTML = portfolioData.map(p => `
-            <div class="portfolio-card"><img src="${p.before}" alt="до"><div class="before-after"><span>До</span><i class="fas fa-arrow-right"></i><span>После</span></div><img src="${p.after}" alt="после"><h3>${p.title}</h3></div>
+            <div class="portfolio-card"><img src="${p.before}" alt="до"><div class="portfolio-info"><h3>${p.title}</h3><div style="display:flex; gap:30px; justify-content:center; margin-top:10px;"><span><i class="fas fa-image"></i> До</span><i class="fas fa-arrow-right"></i><span><i class="fas fa-magic"></i> После</span></div></div></div>
         `).join('');
     }
 
